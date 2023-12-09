@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen:wght@400;700&display=swap');
+
+.MainSec {
+    width: 100%;
+    height: 100%;
+}
+
+.Main_SectionContainer {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "Main_SectionLeftGrid Main_SectionRightGrid";
+    grid-gap: 10px;
+    text-align: left;
+    justify-content: space-around;
+    margin: 10px;
+
+}
+
+.Main_SectionLeftGrid {
+    display: grid;
+    align-content: center;
+    margin: auto;
+    width: 50%;
+}
+
+.Main_SectionRightGrid {
+    background-color: transparent;
+}
+
+.Main_SectionTitle {
+    font-size: 3rem;
+    font-weight: 200;
+    margin: 10px;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+
+}
+
+.Main_SectionButtons {
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    padding: 3%;
+}
+
+.Main_SectionButton {
+    align-content: center;
+    align-items: center;
+    background-color: #b9d6f2;
+    border-radius: 9999px;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px 20px;
+    position: relative;
+    width: min-content;
+    color: black;
+    width: 50%;
+    font-family: "Space Mono", monospace;
+}
+
+.Main_SectionButton1 {
+    align-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-family: "Space Mono", monospace;
+    border-radius: 9999px;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px 20px;
+    position: relative;
+    width: min-content;
+    color: black;
+    width: 50%;
+
+}
+
+.NavLink {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: "Space Mono", monospace;
+}
+
+.NavLink:hover {
+    color: rgb(250, 180, 180);
+    text-decoration: underline;
+}

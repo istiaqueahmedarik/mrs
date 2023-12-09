@@ -1,0 +1,26 @@
+.NavbarContainer {
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo search profile menu";
+    align-items: center;
+    margin: 10px;
+}
+
+.NavBarIcon {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.NavBarIcon img {
+    height: 100%;
+    width: 100%;
+    border-radius: 999px;
+}
