@@ -1,4 +1,4 @@
-
+'use client'
 import { NavigationMenuLink, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu"
 import client from "@/lib/sanity";
 import Image from "next/image";

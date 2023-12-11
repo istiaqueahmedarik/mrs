@@ -12,6 +12,10 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        'custom': ['Poppins', 'sans-serif'],
+        'custom2': ['Space Mono', 'monospace'],
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
