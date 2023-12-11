@@ -1,39 +1,53 @@
-
-
+"use client"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import client from "@/lib/sanity"
+import { useState } from "react"
 
-export function Contact() {
+
+export  function ContactRight(props) {
+  
   return (
-    <div className="dark bg-[#111827] min-h-screen text-white">
-      <div className="container mx-auto px-4 py-8 text-center">
-        <h1 className="text-4xl font-bold">Contact Us</h1>
-        <p className="text-lg text-gray-300 mt-2">We'd love to hear from you!</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          
-          <div>
+    <div>
             <h2 className="text-2xl font-bold">Connect with us</h2>
             <p className="text-lg text-gray-300 mt-2">Follow us on social media for updates and more.</p>
             <div className="flex space-x-4 mt-4 justify-center">
-              <Link className="hover:bg-[#222222] p-2 rounded" href="#">
+              <Link className="hover:bg-[#222222] p-2 rounded" href={props.facebook}>
                 <FacebookIcon className="w-6 h-6 text-white" />
               </Link>
-              <Link className="hover:bg-[#222222] p-2 rounded" href="#">
-                <TwitterIcon className="w-6 h-6 text-white" />
+              <Link className="hover:bg-[#222222] p-2 rounded" href={`mailto:${props.email}`}>
+                <EmailIcon className="w-6 h-6 text-white" />
               </Link>
-              <Link className="hover:bg-[#222222] p-2 rounded" href="#">
+              <Link className="hover:bg-[#222222] p-2 rounded" href={props.instagram}>
                 <InstagramIcon className="w-6 h-6 text-white" />
               </Link>
-              <Link className="hover:bg-[#222222] p-2 rounded" href="#">
-                <LinkedinIcon className="w-6 h-6 text-white" />
-              </Link>
+              
             </div>
           </div>
-        </div>
-      </div>
-    </div>
   );
 }
 
+function EmailIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+      <polyline points="22,6 12,13 2,6"></polyline>
+    </svg>
+  );
+}
 
 function TwitterIcon(props) {
   return (

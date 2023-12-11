@@ -2,25 +2,26 @@
 //import { Button } from "@/components/ui/button"
 
 import Image from "next/image"
+import Link from "next/link"
 
-export default function ScienceTeamTop() {
+export default function TeamTop({title,description,image}) {
   return (
-    <div key="1" className="relative bg-black text-white py-20 px-8 md:flex md:items-center md:justify-between">
+    <div key="1" className="relative bg-[#111827] text-white py-20 px-8 md:flex md:items-center md:justify-between">
       <div className="md:w-1/2">
         <h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400 cursor-text">
-          Exploring the Universe
+          {title}
         </h1>
         <p className="text-xl mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400">
-          Join our scientific team in unraveling the mysteries of the cosmos.
+          {description}
         </p>
-        <button className="bg-[#bd1e59]">Learn More</button>
+        <Link href="#teamList" className="bg-[#bd1e59]">Learn More</Link>
       </div>
       <div className="md:w-1/2">
         <Image
           alt="Science Team"
           className="w-full h-auto"
           height="400"
-          src="/placeholder.svg"
+          src={image}
           style={{
             aspectRatio: "400/400",
             objectFit: "cover",

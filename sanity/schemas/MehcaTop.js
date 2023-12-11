@@ -1,19 +1,23 @@
 export default {
-    name: 'singleImageCard',
-    title: 'All Images',
+    name: 'mechaTop',
+    title: 'Mechanical Top',
     type: 'document',
     fields: [
       {
-        name: 'Title',
+        name: 'title',
         title: 'Title',
         type: 'string',
-        description: 'Title for the image card',
       },
       {
         name: 'description',
         title: 'Description',
-        type: 'text',
-        description: 'Description for the image card',
+        title: 'Description',
+        type: 'string',
+      },
+      {
+        name: 'buttonText',
+        title: 'Button Text',
+        type: 'string',
       },
       {
         name: 'image',
@@ -22,13 +26,7 @@ export default {
         options: {
           hotspot: true,
         },
-        description: 'Image for the image card',
       },
+    
     ],
-    preview: {
-      select: {
-        title: 'title',
-        media: 'image',
-      },
-    },
   };

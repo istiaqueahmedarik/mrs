@@ -1,13 +1,15 @@
 
+import { urlFor } from "@/lib/sanity";
 import SingleMemberCard from "../SingleMemberCard";
 
-export function ScienceTeamList() {
+export function TeamList(props) {
   return (
-    (<div className="bg-[#111827] text-white">
+    (<div  className="bg-[#111827] text-white">
       <div className="text-center py-10">
         <h1
+        id="teamList"
           className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-          OUR AMAZING SCIENCE TEAM
+          OUR AMAZING {props.name} TEAM
         </h1>
       </div>
       <div className="py-8">
@@ -16,7 +18,7 @@ export function ScienceTeamList() {
           TEAM LEAD
         </h2>
         <div className="flex justify-center">
-          <SingleMemberCard/>
+        <SingleMemberCard image={props.leaderImage} name={props.teamLeadName} subtitle={props.teamLeadSubtitle}/>
         </div>
       </div>
      
@@ -26,11 +28,15 @@ export function ScienceTeamList() {
           MEMBERS
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
-          
-          <SingleMemberCard/>
-          <SingleMemberCard/>
-          <SingleMemberCard/>
-          <SingleMemberCard/>
+        {props.data.map((team, index) => {
+        return (
+          <SingleMemberCard key={index} image={urlFor(team.image).url()} name={team.name} subtitle={team.subtitle}/>
+            
+            
+              
+            
+        )
+      })}
         </div>
       </div>
       

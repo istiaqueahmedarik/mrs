@@ -3,7 +3,9 @@ import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 async function fetchSponsor() {
   const query = `*[_type == "sponsorPage"]`;
-  const res = await client.fetch(query);
+  const res = await client.fetch(query,{next: {
+    revalidate: 3600
+  }});
   return res;
 }
 export async function Sponsor() {

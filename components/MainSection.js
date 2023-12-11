@@ -5,7 +5,9 @@ import client, { getClient, urlFor } from '@/lib/sanity';
 import { groq } from 'next-sanity';
 async function fetchMainSec() {
   const query = `*[_type == "mainSection"][0]`;
-  const res = await client.fetch(query);
+  const res = await client.fetch(query,{next: {
+    revalidate: 3600
+  }});
   return res;
 }
 const MainSection = async() => {

@@ -3,14 +3,9 @@
 import Image from "next/image";
 import SingleImageCard from "../SingleImageCard";
 import client, { urlFor } from "@/lib/sanity";
-async function fetchImageCart(type) {
-  const query = `*[_type == "${type}"]`;
-  const res = await client.fetch(query);
-  return res;
-}
 
-export async function ImageGallery({type}) {
-  const data = await fetchImageCart(type);
+
+export async function ImageGallery({data}) {
   console.log(data)
   return (
     (<div className="bg-[#111827] p-6">
@@ -20,7 +15,7 @@ export async function ImageGallery({type}) {
 </h1>
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {data.map((image, index) => (
-          <SingleImageCard key={index} image={urlFor(image.image).url()} title={image.title} desc={image.description}/>
+          <SingleImageCard key={index} image={urlFor(image.image).url()} title={image.Title} desc={image.description}/>
         ))}
         
       </section>

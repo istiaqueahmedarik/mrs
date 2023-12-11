@@ -1,9 +1,20 @@
 
 import { NavigationMenuLink, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu"
+import client from "@/lib/sanity";
 import Image from "next/image";
 import Link from "next/link"
+async function loadTeamData()
+{
+  const query = `*[_type == "teamPage"]`;
+  const res = await client.fetch(query,{next: {
+    revalidate: 3600
+  }});
+  return res;
+}
+export async function NavBar() {
+  const data = await loadTeamData();
+  console.log(data)
 
-export function NavBar() {
   return (
     (<header
       className="flex items-center justify-between px-6 py-4 bg-[#111827] text-white">
@@ -15,7 +26,7 @@ export function NavBar() {
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuLink
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md  px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/">
               Home
             </NavigationMenuLink>
@@ -23,69 +34,53 @@ export function NavBar() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Team</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="grid w-[200px] p-2 bg-gray-800 text-white">
-                <NavigationMenuLink asChild>
+              <div className="grid bg-gray-800 w-[200px] p-2 text-white">
+                {data.map((team, index) =>{
+                  return(
+                    <NavigationMenuLink key={index} asChild>
                   <Link
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-gray-800 p-4 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    href="/Science">
-                    <div className="text-sm font-medium leading-none group-hover:underline">Science</div>
+                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    href={`/team/${index}`}>
+                    <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">{team.teamName}</div>
                   </Link>
                 </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-gray-800 p-4 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    href="/Electrical">
-                    <div className="text-sm font-medium leading-none group-hover:underline">Electrical</div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-gray-800 p-4 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    href="/Mechanical">
-                    <div className="text-sm font-medium leading-none group-hover:underline">Mechanical</div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-gray-800 p-4 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    href="/Software">
-                    <div className="text-sm font-medium leading-none group-hover:underline">Software</div>
-                  </Link>
-                </NavigationMenuLink>
+                  )
+                })}
+               
               </div>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Announcement">
               Announcements
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/ImageGallery">
               Image Gallery
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Rover">
               The Rover
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Achievement">
               Our Achievement
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Contact">
               Contact Us
             </NavigationMenuLink>

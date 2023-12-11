@@ -1,4 +1,4 @@
-import { ScienceTop } from "@/components/component/science-top";
+import { ScienceTop } from "@/components/component/team-top";
 
 export default function Page() {
     return (

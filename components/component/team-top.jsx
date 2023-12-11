@@ -1,8 +1,15 @@
 
 import { Button } from "@/components/ui/button"
+import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
-
-export function ScienceTop() {
+async function fetch(type) {
+  const query = `*[_type == "${type}"][0]`;
+  const res = await client.fetch(query);
+  return res;
+}
+export async function TeamTop({type}) {
+  const data = await fetch(type);
+  console.log(data)
   return (
     (<div
       key="1"
@@ -10,20 +17,20 @@ export function ScienceTop() {
       <div className="md:w-1/2">
         <h1
           className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400 cursor-text">
-          Exploring the Universe
+          {data.title}
         </h1>
         <p
           className="text-xl mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400">
-          Join our scientific team in unraveling the mysteries of the cosmos.
+          {data.description}
         </p>
-        <Button className="bg-[#bd1e59]">Learn More</Button>
+        <Button className="bg-[#bd1e59]">{data.buttonText}</Button>
       </div>
       <div className="md:w-1/2  flex justify-center items-center">
         <Image
           alt="Science Team"
           className="w-[70%] h-auto "
           height="1024"
-          src="/science.svg"
+          src={urlFor(data.image).url()}
           style={{
             aspectRatio: "600/600",
             objectFit: "cover",
