@@ -12,20 +12,20 @@ export default async function ContactLayout({
   }) {
     const data = await loadData();
     return (
-      <section>
-        
-        <div className="dark bg-[#111827] min-h-screen text-white">
-      <div className="container mx-auto px-4 py-8 text-center">
-        <h1 className="text-4xl font-bold">Contact Us</h1>
-        <p className="text-lg text-gray-300 mt-2">We'd love to hear from you!</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <section>
           
-        {children}
-          <ContactRight email = {data.email} facebook={data.facebook} instagram={data.instagram}/>
+          <div className="dark bg-[#111827] min-h-screen text-white">
+        <div className="container mx-auto px-4 py-8 text-center">
+          <h1 className="text-4xl font-bold">Contact Us</h1>
+          <p className="text-lg text-gray-300 mt-2">We&apos;d love to hear from you!</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            
+          {children}
+            <ContactRight email = {data.email} facebook={data.facebook} instagram={data.instagram}/>
+          </div>
         </div>
       </div>
-    </div>
-      </section>
+        </section>
     )
   }
 
