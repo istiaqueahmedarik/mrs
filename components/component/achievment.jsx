@@ -21,7 +21,7 @@ export async function Achievment() {
         <section>
           <h2 className="text-3xl font-bold">Our Achievements</h2>
           <p className="text-gray-400">
-            We're proud to showcase our club's achievements over the years.
+            We&apos;re proud to showcase our club&apos;s achievements over the years.
           </p>
         </section>
 
