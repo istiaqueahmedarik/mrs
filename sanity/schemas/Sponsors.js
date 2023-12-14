@@ -4,14 +4,20 @@ export default {
     type: 'document',
     fields: [
       {
-        name: 'title',
-        title: 'Title',
+        name: 'type',
+        title: 'Type of Sponsorship',
         type: 'string',
       },
       {
         name: 'subtitle',
         title: 'Subtitle',
         type: 'string',
+      },
+      {
+        name: 'benefits',
+        title: 'Benefits',
+        type: 'array',
+        of: [{ type: 'block' }],
       },
       {
         name: 'sponsors',
@@ -27,6 +33,17 @@ export default {
                 name: 'name',
                 title: 'Name',
                 type: 'string',
+              },
+              {
+                name: 'description',
+                title: 'Description',
+                type: 'array',
+                of: [{ type: 'block' }],
+              },
+              {
+                name: 'link',
+                title: 'Link',
+                type: 'url',
               },
               {
                 name: 'logo',

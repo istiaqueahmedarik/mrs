@@ -6,6 +6,7 @@ import JoinUsAndFooter from '@/components/JoinUsAndFooter'
 import { ScienceTop } from '@/components/component/team-top'
 import Navbar from '@/components/NavBar'
 import { Sponsor } from '@/components/component/sponsor'
+import DonateUs from '@/components/DonateUs'
 
 export default function Home() {
   console.log("Home") 
@@ -15,7 +16,9 @@ export default function Home() {
         <MainSection/>
         <AboutUs/>
         {/* <Team/> */}
-        <Sponsor/>
+        {/* <Sponsor/> */}
+        <DonateUs/>
+        
       </div>
     </main>
   )

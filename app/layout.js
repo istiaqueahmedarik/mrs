@@ -3,6 +3,7 @@ import './globals.css'
 import Navbar from '@/components/NavBar'
 import JoinUsAndFooter from '@/components/JoinUsAndFooter'
 import { NavBar } from '@/components/component/nav-bar'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +19,18 @@ export default function RootLayout({ children }) {
         <NavBar/>
         {children}
         <JoinUsAndFooter/>
+        <Script id="sslczPayBtn">
+          {`
+            (function (window, document) {
+              var loader = function () {
+                var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+                script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+                tag.parentNode.insertBefore(script, tag);
+              };
+              window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+            })(window, document);
+          `}
+        </Script>
         </body>
     </html>
   )

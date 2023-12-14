@@ -13,7 +13,7 @@ export  function ContactRight(props) {
   return (
     <div>
             <h2 className="text-2xl font-bold">Connect with us</h2>
-            <p className="text-lg text-gray-300 mt-2">Follow us on social media for updates and more.</p>
+            <p className="text-lg text-gray-300 mt-2">{props.subtitle}</p>
             <div className="flex space-x-4 mt-4 justify-center">
               <Link className="hover:bg-[#222222] p-2 rounded" href={props.facebook}>
                 <FacebookIcon className="w-6 h-6 text-white" />

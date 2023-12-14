@@ -7,21 +7,33 @@ async function loadData()
   const res =  client.fetch(query);
   return res;
 }
+async function loadSponsorData(id) {
+    const query = `*[_type == "sponsorPage"][${id}]`;
+    const res = await client.fetch(query, {
+        next: {
+            revalidate: 3600
+        }
+    });
+    return res;
+}
 export default async function ContactLayout({
     children, 
+    params
   }) {
     const data = await loadData();
+    const data2 = await loadSponsorData(params.id);
+    console.log(params)
     return (
         <section>
           
           <div className="dark bg-[#111827] min-h-screen text-white">
         <div className="container mx-auto px-4 py-8 text-center">
-          <h1 className="text-4xl font-bold">Contact Us</h1>
+          <h1 className="text-4xl font-bold">Contact Us for {data2.type} level sponsorship</h1>
           <p className="text-lg text-gray-300 mt-2">We&apos;d love to hear from you!</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             
           {children}
-            <ContactRight email = {data.email} facebook={data.facebook} instagram={data.instagram} subtitle={"Follow us on social media for updates and more."}/>
+            <ContactRight email = {data.email} facebook={data.facebook} instagram={data.instagram} subtitle={"You can also contact us here"}/>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ export default function page() {
   return (
     <div className='ContactMainContainer'>
         
-        <Contactleft/>
+        <Contactleft type={`Contacting for communication`}/>
     </div>
   )
 }

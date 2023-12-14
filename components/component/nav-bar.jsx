@@ -11,8 +11,18 @@ async function loadTeamData()
   }});
   return res;
 }
+
+async function loadSponsorData()
+{
+  const query = `*[_type == "sponsorPage"]`;
+  const res = await client.fetch(query,{next: {
+    revalidate: 3600
+  }});
+  return res;
+}
 export async function NavBar() {
   const data = await loadTeamData();
+  const sponsorData = await loadSponsorData();
   console.log(data)
 
   return (
@@ -50,6 +60,34 @@ export async function NavBar() {
               </div>
             </NavigationMenuContent>
           </NavigationMenuItem>
+          
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Sponsors</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div className="grid bg-gray-800 w-[200px] p-2 text-white">
+                {sponsorData.map((sponsors, index) =>{
+                  return(
+                    <NavigationMenuLink key={index} asChild>
+                  <Link
+                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    href={`/Sponsors/${index}`}>
+                    <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">{sponsors.type}</div>
+                  </Link>
+                </NavigationMenuLink>
+                  )
+                })}
+                <NavigationMenuLink asChild>
+                  <Link
+                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    href={`/AddSponsorship`}>
+                    <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Sponsor Us</div>
+                  </Link>
+                </NavigationMenuLink>
+               
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
@@ -68,14 +106,14 @@ export async function NavBar() {
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Rover">
-              The Rover
+              Rover
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Achievement">
-              Our Achievement
+              Achievements
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
