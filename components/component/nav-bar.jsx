@@ -91,8 +91,8 @@ export async function NavBar() {
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-              href="/Announcement">
-              Announcements
+              href="/events">
+              Events
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -114,6 +114,13 @@ export async function NavBar() {
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Achievement">
               Achievements
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              href="/donate">
+              Donate
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>

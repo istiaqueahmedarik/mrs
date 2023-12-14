@@ -8,7 +8,8 @@ import Sponsors from "./schemas/Sponsors";
 import teamPage from "./schemas/TeamList";
 import Achievement from "./schemas/Achievement";
 import ContactUs from "./schemas/ContactUs";
+import Events from "./schemas/Events";
 
 export const schema = {
-  types: [MainSec,AboutUs,Sponsors,Footer,SingleImageCard,teamPage,Achievement,ContactUs],
+  types: [MainSec,AboutUs,Events,Sponsors,Footer,SingleImageCard,teamPage,Achievement,ContactUs],
 }

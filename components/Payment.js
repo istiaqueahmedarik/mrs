@@ -1,29 +1,42 @@
 'use client'
 import React, { useState } from 'react'
+import axios from 'axios';
 
 
 function Payment() {
     const [data, setData] = useState({});
    
     const handleSubmit =  (e) => {
-        e.preventDefault();
         console.log(data)
         const name = data.name;
     const email = data.email;
     const total_amount = data.total_amount;
     const address = data.address;
     const phoneNumber = data.phoneNumber;
-   
-    setData({})
+    setData({ name: '', email: '', total_amount: '', address: '', phoneNumber: '' });
+    axios.post('https://mrs2api.vercel.app/api/v1/sslcommerz', {
+        total_amount : total_amount,
+        phoneNumber : phoneNumber,
+        address : address, 
+        email : email,
+        name : name
+      })
+      .then(function (response) {
+        window.location.href = response.data.url;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    
     }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-    <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-md">
+    <div className="flex flex-col items-center justify-center min-h-screen m-[2%] text-white">
+    <div className="max-w-md w-full p-6 bg-[#242f46] rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Donation Details</h2>
-        <form>
+        <div>
         <div className="mb-4">
-                <label htmlFor="Name" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="Name" className="block  font-bold mb-2">
                     Your Name
                 </label>
                 <input
@@ -37,7 +50,7 @@ function Payment() {
                 />
             </div>
             <div className="mb-4">
-                <label htmlFor="Name" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="Name" className="block  font-bold mb-2">
                     Your Email
                 </label>
                 <input
@@ -51,7 +64,7 @@ function Payment() {
                 />
             </div>
             <div className="mb-4">
-                <label htmlFor="total_amount" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="total_amount" className="block  font-bold mb-2">
                     Total Amount
                 </label>
                 <input
@@ -65,7 +78,7 @@ function Payment() {
                 />
             </div>
             <div className="mb-4">
-                <label htmlFor="address" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="address" className="block  font-bold mb-2">
                     Address
                 </label>
                 <input
@@ -79,7 +92,7 @@ function Payment() {
                 />
             </div>
             <div className="mb-4">
-                <label htmlFor="phoneNumber" className="block text-gray-700 font-bold mb-2">
+                <label htmlFor="phoneNumber" className="block  font-bold mb-2">
                     Phone Number
                 </label>
                 <input
@@ -102,7 +115,7 @@ function Payment() {
                     Donate
                 </button>
             </div>
-        </form>
+        </div>
     </div>
 </div>
   )

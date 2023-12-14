@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import client, { urlFor } from '@/lib/sanity'
 import SanityBlockContent from '@sanity/block-content-to-react'
 import Image from 'next/image'
+import { LucideHeading, LucideHeading3 } from 'lucide-react'
 async function loadData() {
   const query = `*[_type == "achievementsPage"]  | order(time desc)`
   const res = await client.fetch(query, {
@@ -29,30 +30,54 @@ export async function Achievment() {
           <div className="divide-y divide-gray-600 space-y-4">
             {data.map((achievement, index) => {
               return (
-                <div
+                (index&1^1)?(
+                  <div
                   key={index}
-                  className="pt-4 flex flex-col sm:flex-row items-start space-x-2 sm:space-x-4"
+                  className="grid lg:grid-cols-[1fr_2fr] lg:grid-rows-[1fr] gap-4  pt-4 md:grid-cols-1 md:grid-rows-[2fr_1fr]  sm:grid-cols-1 sm:grid-rows-[2fr_1fr] 
+                  md:gap-6 sm:gap-6 p-2 rounded-md bg-[#171e2e]"
                 >
-                  <div className="order-2 sm:order-1 flex-shrink-0">
-                    <Image
+                   <Image
                       src={urlFor(achievement.image).url()}
                       alt={achievement.title}
-                      width={500} // adjust as needed
-                      height={500} // adjust as needed
+                      width={400} 
+                      height={400} 
                       objectFit="cover"
                       className="rounded-lg"
                     />
-                  </div>
-                  <div className="order-1 sm:order-2">
-                    <Badge
-                      className="hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-2xl"
-                      variant="secondary"
-                    >
-                      {new Date(achievement.time).toLocaleDateString()}
-                    </Badge>
-                    <BlockContent blocks={achievement.description} />
-                  </div>
+                    <div className='flex flex-col'>
+                      
+                      <Badge className="hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-2xl" variant="secondary">
+                        {new Date(achievement.time).toLocaleDateString()}
+                      </Badge>
+                      <BlockContent blocks={achievement.description} />
+                      </div>
+                  
                 </div>
+                ):(
+                  <div
+                  key={index}
+                  className="grid lg:grid-cols-[2fr_1fr] lg:grid-rows-[1fr] gap-4  pt-4 md:grid-cols-1 md:grid-rows-[1fr_2fr]  sm:grid-cols-1 sm:grid-rows-[1fr_2fr] 
+                  md:gap-6 sm:gap-6 p-2 rounded-md bg-[#192235]"
+                >
+                  
+                    <div className='flex flex-col'>
+                      
+                      <Badge className="hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-2xl" variant="secondary">
+                        {new Date(achievement.time).toLocaleDateString()}
+                      </Badge>
+                      <BlockContent blocks={achievement.description} />
+                      </div>
+                      <Image
+                      src={urlFor(achievement.image).url()}
+                      alt={achievement.title}
+                      width={400} 
+                      height={400} 
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
+                  
+                </div>
+                )
               )
             })}
           </div>

@@ -14,7 +14,8 @@ export default function TeamTop({title,description,image}) {
         <p className="text-xl mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400">
           {description}
         </p>
-        <Link href="#teamList" className="bg-[#bd1e59]">Learn More</Link>
+        <Link href="#teamList" className="bg-[#bd1e59] p-2 rounded-lg 
+        hover:bg-blue-600 hover:text-white transition-all scroll-smooth">Learn More</Link>
       </div>
       <div className="md:w-1/2">
         <Image

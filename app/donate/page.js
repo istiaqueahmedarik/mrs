@@ -3,7 +3,7 @@ import React from 'react'
 
 function page() {
     return (
-        <div className='bg-black h-[100vh]'>
+        <div className='bg-[#111827] h-[100vh]'>
             <Payment />
         </div>
     );
