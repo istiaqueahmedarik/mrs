@@ -11,9 +11,9 @@ async function fetchData(id) {
   }
 async function page({params}) {
     const data = await fetchData(params.id);
-    console.log(data);
+    
   return (
-       <div className='m-auto w-[50%] customHead'>
+       <div className='m-auto md:w-[60%] sm:w-[70%] w-[80%] lg:w-[50%] customHead'>
         <PortableText
             className="text-center text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl w-[50%] m-auto"
           value={data.eventPost}

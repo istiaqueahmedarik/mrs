@@ -15,7 +15,7 @@ async function loadData() {
 }
 export async function Achievment() {
   const data = await loadData()
-  console.log(data)
+  
   return (
     <div className="min-h-screen bg-[#111827] text-gray-200">
       <main className="p-6 space-y-6">

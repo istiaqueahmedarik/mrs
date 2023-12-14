@@ -9,7 +9,7 @@ import { Sponsor } from '@/components/component/sponsor'
 import DonateUs from '@/components/DonateUs'
 
 export default function Home() {
-  console.log("Home") 
+  
   return (
     <main>
       <div>

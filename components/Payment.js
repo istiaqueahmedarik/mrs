@@ -7,7 +7,7 @@ function Payment() {
     const [data, setData] = useState({});
    
     const handleSubmit =  (e) => {
-        console.log(data)
+        
         const name = data.name;
     const email = data.email;
     const total_amount = data.total_amount;
@@ -25,7 +25,7 @@ function Payment() {
         window.location.href = response.data.url;
       })
       .catch(function (error) {
-        console.log(error);
+        
       });
     
     }

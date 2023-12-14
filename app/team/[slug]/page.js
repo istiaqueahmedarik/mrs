@@ -12,7 +12,7 @@ async function loadTeamData(id)
 }
 export default async function Page({ params }) {
     const data = await loadTeamData(params.slug);
-    console.log(data.description);
+    
     return (
         <div className='ScienceMainContainer'>
         

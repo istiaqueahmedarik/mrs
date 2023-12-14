@@ -22,7 +22,7 @@ export default async function ContactLayout({
   }) {
     const data = await loadData();
     const data2 = await loadSponsorData(params.id);
-    console.log(params)
+    
     return (
         <section>
           

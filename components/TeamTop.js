@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function TeamTop({title,description,image}) {
   return (
-    <div key="1" className="relative bg-[#111827] text-white py-20 px-8 md:flex md:items-center md:justify-between">
+    <div key="1" className="relative bg-[#111827] text-white py-20 px-8 md:flex md:items-center md:justify-between grid grid-rows-[1fr_2fr] gap-3">
       <div className="md:w-1/2">
         <h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400 cursor-text">
           {title}
@@ -15,7 +15,7 @@ export default function TeamTop({title,description,image}) {
           {description}
         </p>
         <Link href="#teamList" className="bg-[#bd1e59] p-2 rounded-lg 
-        hover:bg-blue-600 hover:text-white transition-all scroll-smooth">Learn More</Link>
+        hover:bg-blue-600 hover:text-white transition-all scroll-smooth m-2">Learn More</Link>
       </div>
       <div className="md:w-1/2">
         <Image

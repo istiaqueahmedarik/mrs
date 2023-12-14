@@ -6,7 +6,7 @@ import client, { urlFor } from "@/lib/sanity";
 
 
 export async function ImageGallery({data}) {
-  console.log(data)
+  
   return (
     (<div className="bg-[#111827] p-6">
       <h1

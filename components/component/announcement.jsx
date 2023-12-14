@@ -11,7 +11,7 @@ async function fetchData() {
 }
 export async function Announcement() {
   const data = await fetchData();
-  console.log(data);  
+  
   return (
     (<div
       key="1"

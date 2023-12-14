@@ -11,7 +11,7 @@ async function loadSponsorData(id)
 }
 export async function Sponsor({id}) {
   const data = await loadSponsorData(id);
-  console.log(data)
+  
   return (
     (<section className="w-full py-12 bg-gray-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

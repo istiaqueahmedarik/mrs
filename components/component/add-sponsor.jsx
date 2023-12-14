@@ -26,7 +26,7 @@ export async function AddSponsor() {
         </p>
         <div className="flex flex-wrap justify-center items-start gap-8">
           {data.map((sponsor, index) => {
-            console.log(sponsor)
+            
             return (
               <Card key={index} className="bg-gray-800 text-white">
                 <CardHeader>

@@ -9,7 +9,7 @@ async function fetch(type) {
 }
 export async function TeamTop({type}) {
   const data = await fetch(type);
-  console.log(data)
+  
   return (
     (<div
       key="1"
