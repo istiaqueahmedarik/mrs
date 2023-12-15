@@ -43,7 +43,7 @@ function Payment() {
                     type="text"
                     id="name"
                     name="Name"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+                    className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
                     value={data.name}
                     onChange={(e) => setData({ ...data, name: e.target.value })}
                     required
@@ -57,7 +57,7 @@ function Payment() {
                     type="email"
                     id="email"
                     name="Email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+                    className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
                     value={data.email}
                     onChange={(e) => setData({ ...data, email: e.target.value })}
                     required
@@ -71,7 +71,7 @@ function Payment() {
                     type="text"
                     id="total_amount"
                     name="total_amount"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+                    className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
                     value={data.total_amount}
                     onChange={(e) => setData({ ...data, total_amount: e.target.value })}
                     required
@@ -85,7 +85,7 @@ function Payment() {
                     type="text"
                     id="address"
                     name="address"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+                    className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
                     value={data.address}
                     onChange={(e) => setData({ ...data, address: e.target.value })}
                     required
@@ -99,7 +99,7 @@ function Payment() {
                     type="text"
                     id="phoneNumber"
                     name="phoneNumber"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+                    className="w-full px-3 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
                     value={data.phoneNumber}
                     onChange={(e) => setData({ ...data, phoneNumber: e.target.value })}
                     required
