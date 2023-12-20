@@ -17,7 +17,7 @@ export async function Achievment() {
   const data = await loadData()
   
   return (
-    <div className="min-h-screen bg-[#111827] text-gray-200">
+    <div className="top-[3rem]  relative  min-h-screen bg-[#111827] text-gray-200">
       <main className="p-6 space-y-6">
         <section>
           <h2 className="text-3xl font-bold">Our Achievements</h2>

@@ -14,7 +14,7 @@ export default async function ContactLayout({
     return (
         <section>
           
-          <div className="dark bg-[#111827] min-h-screen text-white">
+          <div className="top-[4rem] relative mb-[2rem] dark bg-[#111827] min-h-screen text-white">
         <div className="container mx-auto px-4 py-8 text-center">
           <h1 className="text-4xl font-bold">Contact Us</h1>
           <p className="text-lg text-gray-300 mt-2">We&apos;d love to hear from you!</p>

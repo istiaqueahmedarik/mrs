@@ -4,8 +4,9 @@ import BlockContent from '@sanity/block-content-to-react';
 import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
-async function loadSponsorData(id) {
-    const query = `*[_type == "sponsorPage"][${id}]`;
+import { AddSponsor } from "@/components/component/add-sponsor";
+async function loadSponsorData() {
+    const query = `*[_type == "sponsorPage"]`;
     const res = await client.fetch(query, {
         next: {
             revalidate: 3600
@@ -13,12 +14,15 @@ async function loadSponsorData(id) {
     });
     return res;
 }
-export default async function Page({ params }) {
-    const data = await loadSponsorData(params.type);
+export default async function Page() {
+    const Alldata = await loadSponsorData();
     
     return (
-        <div className='top-[2rem]  relative  MainContainer'>
-            <Sponsor id={params.type} />
+        <div>
+            {Alldata.map((data, index1) => {
+                return(
+                    <div key={index1} className='top-[2rem]  relative  MainContainer'>
+            <Sponsor id={index1} />
             {data.sponsors.map((i, index) => {
                 return (
                     (index % 2 == 0) ? (
@@ -44,6 +48,10 @@ export default async function Page({ params }) {
             })}
 
 
+        </div>
+                )
+            })}
+            <AddSponsor/>
         </div>
     )
 }

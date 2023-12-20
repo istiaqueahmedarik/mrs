@@ -7,7 +7,7 @@ export function Rover() {
   return (
     (<div
       key="1"
-      className="bg-gray-900 min-h-screen min-w-screen flex items-center justify-center">
+      className="top-[4rem]  relative mb-[4rem]  bg-gray-900  min-w-screen flex items-center justify-center">
       <div className="w-full max-w-4xl mx-auto p-4 space-y-6">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">3D Model Rover Showcase</h1>

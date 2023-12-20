@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div className='ContactMainContainer'>
+    <div className='top-[2rem]  relative  ContactMainContainer'>
         
         <Contactleft type={`Contacting for communication`}/>
     </div>

@@ -10,17 +10,9 @@ async function loadTeamData()
   return res;
 }
 
-async function loadSponsorData()
-{
-  const query = `*[_type == "sponsorPage"]`;
-  const res = await client.fetch(query,{next: {
-    revalidate: 3600
-  }});
-  return res;
-}
 async function Navbar() {
   return (
-    <NavBar data={await loadTeamData()} sponsorData={await loadSponsorData()}/>
+    <NavBar data={await loadTeamData()} />
   )
 }
 

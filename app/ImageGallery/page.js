@@ -13,7 +13,7 @@ async function loadData()
 }
 export default async function page() {
   return (
-    <div>
+    <div className='top-[2rem]  relative'>
         <ImageGallery data = {await loadData()}/>
     </div>
   )

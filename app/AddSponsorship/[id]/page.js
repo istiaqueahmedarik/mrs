@@ -15,7 +15,7 @@ async function loadSponsorData(id) {
 export default async function page({params}) {
     const data = await loadSponsorData(params.id);
   return (
-    <div className='ContactMainContainer'>
+    <div className='top-[8rem] ContactMainContainer'>
         
         <Contactleft type={`Contacting for ${data.type} sponsorship`}/>
     </div>

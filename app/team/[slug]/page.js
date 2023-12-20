@@ -14,7 +14,7 @@ export default async function Page({ params }) {
     const data = await loadTeamData(params.slug);
     
     return (
-        <div className='ScienceMainContainer'>
+        <div className='top-[2rem]  relative  ScienceMainContainer'>
         
         <TeamTop title={data.teamName} description={data.description} image={urlFor(data.teamImage).url()}/>
         <TeamList name={data?.teamName} teamLeadName={data?.leaderName} teamLeadSubtitle={data?.leaderSubtitle} leaderImage={urlFor(data?.leaderImage).url()} data={data?.teamMembers}/>

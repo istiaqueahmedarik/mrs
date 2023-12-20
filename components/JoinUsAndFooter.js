@@ -13,7 +13,7 @@ async function JoinUsAndFooter() {
     const data = await GetJoinUsAndFooter();
 
     return (
-      <div className="flex flex-col justify-between items-center bg-gray-900 text-[#b9d6f2] p-[50px] md:p-[30px] lg:p-[20px]">
+      <div className="mt-5 flex flex-col justify-between items-center bg-gray-900 text-[#b9d6f2] p-[50px] md:p-[30px] lg:p-[20px]">
         <div className="text-center w-full md:w-3/5 lg:w-2/5 grid place-items-center m-auto">
           <h1 className="text-[2rem] md:text-[1.8rem] lg:text-[1.6rem] font-extralight font-[bolder] mb-5">{data.title}</h1>
           <p className="text-[1.1rem] md:text-[1rem] lg:text-[0.9rem] mb-[30px]">{data.subtitle}</p>
