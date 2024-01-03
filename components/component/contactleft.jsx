@@ -5,10 +5,12 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import client from '@/lib/sanity'
+import { useToast } from '../ui/use-toast'
 export default function Contactleft(params) {
     const [name, setName] = useState('')
     const [message, setMessage] = useState('')
     const [email, setEmail] = useState('')
+    const { toast } = useToast()
   return (
     <div>
             <h2 className="text-2xl font-bold">Send us a message</h2>
@@ -41,7 +43,7 @@ export default function Contactleft(params) {
                         onChange={(e) => setMessage(e.target.value)}
                   placeholder="Enter your message" />
               </div>
-              <Button disabled={!(name.length&&email.length&&message.length)} onClick={()=>sendMessage(params.type,name,email,message,setEmail,setName,setMessage)} className="bg-[#4A5568] hover:bg-[#718096]">Send Message</Button>
+              <Button disabled={!(name.length&&email.length&&message.length)} onClick={()=>sendMessage(params.type,name,email,message,setEmail,setName,setMessage,toast)} className="bg-[#4A5568] hover:bg-[#718096]">Send Message</Button>
             </div>
           </div>
   )
@@ -54,8 +56,10 @@ async function loadData()
 }
 
 
-async function sendMessage(type, name, email, message,setEmail,setName,setMessage) {
-    
+async function sendMessage(type, name, email, message,setEmail,setName,setMessage,toast) {
+  toast({
+    description: "Your message has been sent.",
+  })
     setEmail('');
     setName('');
     setMessage('');
