@@ -17,8 +17,10 @@ export default async function ContactLayout({
     children, 
     params
   }) {
-    const data = await loadData();
-    const data2 = await loadSponsorData(params.id);
+    const dataF = await loadData();
+    const data2F = await loadSponsorData(params.id);
+
+    const [data,data2] = await Promise.all([dataF,data2F]);
     
     return (
         <section>
