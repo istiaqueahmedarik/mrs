@@ -1,13 +1,16 @@
 'use client'
 import React, { useState } from 'react'
 import axios from 'axios';
+import { useToast } from './ui/use-toast';
 
 
 function Payment() {
     const [data, setData] = useState({});
-   
+    const { toast } = useToast()
     const handleSubmit =  (e) => {
-        
+        toast({
+            description: "Wait a moment, we are processing your request",
+          })
         const name = data.name;
     const email = data.email;
     const total_amount = data.total_amount;
