@@ -3,11 +3,10 @@ import '../app/MainSec.css';
 import Link from 'next/link';
 import client, { getClient, urlFor } from '@/lib/sanity';
 import { groq } from 'next-sanity';
+export const revalidate = 3600;
 async function fetchMainSec() {
   const query = `*[_type == "mainSection"][0]`;
-  const res = await client.fetch(query,{next: {
-    revalidate: 3600
-  }});
+  const res = await client.fetch(query);
   return res;
 }
 const MainSection = async() => {

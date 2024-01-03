@@ -7,13 +7,10 @@ async function loadData()
   const res =  client.fetch(query);
   return res;
 }
+export const revalidate = 3600;
 async function loadSponsorData(id) {
     const query = `*[_type == "sponsorPage"][${id}]`;
-    const res = await client.fetch(query, {
-        next: {
-            revalidate: 3600
-        }
-    });
+    const res = await client.fetch(query);
     return res;
 }
 export default async function ContactLayout({

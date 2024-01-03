@@ -2,13 +2,10 @@ import '../app/AboutUs.css';
 import Image from 'next/image';
 import client, { urlFor } from '@/lib/sanity';
 import BlockContent from '@sanity/block-content-to-react';
+export const revalidate = 3600;
 async function fetchAboutUs() {
     const query = `*[_type == "aboutUs"][0]`;
-    const res = await client.fetch(query, {
-        next: {
-            revalidate: 3600
-        }
-    });
+    const res = await client.fetch(query);
     return res;
 }
 

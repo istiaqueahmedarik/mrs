@@ -3,13 +3,10 @@ import { Contact } from '@/components/component/contact'
 import Contactleft from '@/components/component/contactleft'
 import client from '@/lib/sanity';
 import React from 'react'
+export const revalidate = 3600;
 async function loadSponsorData(id) {
     const query = `*[_type == "sponsorPage"][${id}]`;
-    const res = await client.fetch(query, {
-        next: {
-            revalidate: 3600
-        }
-    });
+    const res = await client.fetch(query);
     return res;
 }
 export default async function page({params}) {

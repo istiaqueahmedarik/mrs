@@ -4,13 +4,10 @@ import client, { urlFor } from '@/lib/sanity'
 import SanityBlockContent from '@sanity/block-content-to-react'
 import Image from 'next/image'
 import { LucideHeading, LucideHeading3 } from 'lucide-react'
+export const revalidate = 3600;
 async function loadData() {
   const query = `*[_type == "achievementsPage"]  | order(time desc)`
-  const res = await client.fetch(query, {
-    next: {
-      revalidate: 3600,
-    },
-  })
+  const res = await client.fetch(query)
   return res
 }
 export async function Achievment() {
