@@ -29,7 +29,10 @@ export function ImageSlider({ data }) {
                     ))}
 
                 </CarouselContent>
+                <CarouselPrevious />
+      <CarouselNext />
             </Carousel>
         </div>
     )
 }
+
