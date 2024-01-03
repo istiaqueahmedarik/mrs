@@ -1,51 +1,50 @@
 @tailwind base;
 @tailwind components;
-
 @tailwind utilities;
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  background: #111827;
-  color: #b9d6f2;
-  scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background: #111827;
+    color: #b9d6f2;
+    scroll-behavior: smooth;
 }
 
 .customHead h1 {
-  @apply text-4xl font-bold;
+    @apply text-4xl font-bold;
 }
 
 .customHead p {
-  @apply mt-[2%] mb-[2%];
+    @apply mt-[2%] mb-[2%];
 }
 
 h1 {
-  @apply text-4xl font-bold;
+    @apply text-4xl font-bold;
 }
 
 h2 {
-  @apply text-3xl font-bold;
+    @apply text-3xl font-bold;
 }
 
 h3 {
-  @apply text-2xl font-bold;
+    @apply text-2xl font-bold;
 }
 
 h4 {
-  @apply text-xl font-bold;
+    @apply text-xl font-bold;
 }
 
 h5 {
-  @apply text-lg font-bold;
+    @apply text-lg font-bold;
 }
 
 h6 {
-  @apply text-base font-bold;
+    @apply text-base font-bold;
 }

@@ -48,31 +48,8 @@ export function NavBar({data}) {
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-              href="/Sponsors">
-              <HelpingHand className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Sponsors</div> 
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-         
-
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-              href="/events">
-              <CalendarDays className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Events</div> 
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-              href="/ImageGallery">
-               <GalleryHorizontalEnd className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Gallery</div> 
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Rover">
-               <Rotate3D className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">3D Models</div> 
+               <Rotate3D className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Rover</div> 
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -85,8 +62,15 @@ export function NavBar({data}) {
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-              href="/donate">
-               <HelpingHand className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Donate</div> 
+              href="/events">
+              <CalendarDays className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Competitions</div> 
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              href="/ImageGallery">
+               <GalleryHorizontalEnd className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Gallery</div> 
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -99,10 +83,31 @@ export function NavBar({data}) {
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              href="/Sponsors">
+              <HelpingHand className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Sponsors</div> 
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+         
+
+          
+          
+          
+          
+          {/* <NavigationMenuItem>
+            <NavigationMenuLink
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              href="/donate">
+               <HelpingHand className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Donate</div> 
+            </NavigationMenuLink>
+          </NavigationMenuItem> */}
+          
+          {/* <NavigationMenuItem>
+            <NavigationMenuLink
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Contact">
                <Contact className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Contact</div> 
             </NavigationMenuLink>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
 
@@ -146,13 +151,13 @@ export function NavBar({data}) {
             </NavigationMenuLink>
           </NavigationMenuItem>
 
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuLink
             className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
             href="/Contact">
              <Contact className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Contact</div> 
           </NavigationMenuLink>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         
         <NavigationMenuItem>
           <NavigationMenuTrigger>
@@ -160,7 +165,27 @@ export function NavBar({data}) {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="grid bg-gray-800 w-[200px] p-2 text-white">
-             
+            <NavigationMenuLink asChild>
+                <Link
+                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  href={`/Rover`}>
+                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Rover</div>
+                </Link>
+              </NavigationMenuLink>
+              <NavigationMenuLink asChild>
+                <Link
+                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  href={`/Achievement`}>
+                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Achievements</div>
+                </Link>
+              </NavigationMenuLink>
+              <NavigationMenuLink asChild>
+                <Link
+                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  href={`/events`}>
+                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Competitions </div>
+                </Link>
+              </NavigationMenuLink>
               <NavigationMenuLink asChild>
                 <Link
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
@@ -177,37 +202,19 @@ export function NavBar({data}) {
                 </Link>
               </NavigationMenuLink>
 
-              <NavigationMenuLink asChild>
-                <Link
-                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  href={`/Rover`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">3D Models</div>
-                </Link>
-              </NavigationMenuLink>
+              
 
-              <NavigationMenuLink asChild>
-                <Link
-                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  href={`/Achievement`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Achievements</div>
-                </Link>
-              </NavigationMenuLink>
+             
 
-              <NavigationMenuLink asChild>
-                <Link
-                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  href={`/events`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Events </div>
-                </Link>
-              </NavigationMenuLink>
+              
 
-              <NavigationMenuLink asChild>
+              {/* <NavigationMenuLink asChild>
                 <Link
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   href={`/donate`}>
                   <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Donate Us </div>
                 </Link>
-              </NavigationMenuLink>
+              </NavigationMenuLink> */}
 
              
             </div>

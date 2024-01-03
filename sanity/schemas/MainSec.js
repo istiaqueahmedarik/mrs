@@ -9,6 +9,11 @@ export default {
         type: 'string',
       },
       {
+        name: 'subTitle',
+        title: 'Sub Title',
+        type: 'string',
+      },
+      {
         name: 'button1Text',
         title: 'Button 1 Text',
         type: 'string',
