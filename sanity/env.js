@@ -3,4 +3,4 @@ export const apiVersion =
 
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '01wyop49';
-export const useCdn = true;
+export const useCdn = false;
