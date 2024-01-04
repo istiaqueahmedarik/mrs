@@ -24,6 +24,15 @@ export default {
         type: 'text',
       },
       {
+        name:'slug',
+        title:'Slug',
+        type:'slug',
+        options:{
+          source:'eventTitle',
+          maxLength:100,
+        }
+      },
+      {
         name: 'eventPost',
         title: 'Event Post',
         type: 'array',

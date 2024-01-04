@@ -20,7 +20,7 @@ export async function Announcement() {
       </header>
       {data.map((item, index) => {
         return(
-          <Link href={`/events/${index}`} key={index}>
+          <Link href={`/events/${item.slug.current}`} key={index}>
             <Card  className="bg-[#2d3748] rounded-lg p-2 mb-6">
           <CardHeader>
             <CardTitle

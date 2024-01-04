@@ -4,12 +4,13 @@ import Image from 'next/image';
 import React from 'react'
 export const revalidate = 10;
 async function fetchData(id) {
-    const query = `*[_type == "events"]  | order(time desc)[${id}]`;
+    const query = `*[_type == "events" && slug.current == "${id}"][0]`;
     const res = await client.fetch(query);
     return res;
   }
 async function page({params}) {
     const data = await fetchData(params.id);
+    console.log(data);
     
   return (
        <div className='top-[5rem] mb-[2rem] relative  m-auto md:w-[60%] sm:w-[70%] w-[80%] lg:w-[50%] customHead'>
