@@ -6,7 +6,7 @@ import { HoverCardTrigger, HoverCardContent, HoverCard } from "@/components/ui/h
 import client, { urlFor } from "@/lib/sanity";
 import BlockContent from '@sanity/block-content-to-react';
 import Image from "next/image";
-export const revalidate = 3600;
+export const revalidate = 10;
 async function loadData()
 {
   const query = `*[_type == "imageItem"]`;

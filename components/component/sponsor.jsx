@@ -1,7 +1,7 @@
 
 import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
-export const revalidate = 3600;
+export const revalidate = 10;
 async function loadSponsorData(id)
 {
   const query = `*[_type == "sponsorPage"][${id}]`;

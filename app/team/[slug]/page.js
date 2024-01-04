@@ -2,7 +2,7 @@ import TeamTop from "@/components/TeamTop";
 import { ImageGallery } from "@/components/component/image-gallery";
 import { TeamList } from "@/components/component/team-list";
 import client, { urlFor } from "@/lib/sanity";
-export const revalidate = 3600;
+export const revalidate = 10;
 async function loadTeamData(id)
 {
   const query = `*[_type == "teamPage"][${id}]`;

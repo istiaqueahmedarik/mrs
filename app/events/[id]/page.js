@@ -2,7 +2,7 @@ import client, { urlFor } from '@/lib/sanity';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import React from 'react'
-export const revalidate = 3600;
+export const revalidate = 10;
 async function fetchData(id) {
     const query = `*[_type == "events"]  | order(time desc)[${id}]`;
     const res = await client.fetch(query);

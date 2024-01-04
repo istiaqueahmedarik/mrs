@@ -3,7 +3,7 @@ import Image from 'next/image';
 import client, { urlFor } from '@/lib/sanity';
 import BlockContent from '@sanity/block-content-to-react';
 import { ImageSlider } from './ImageSlider';
-export const revalidate = 3600;
+export const revalidate = 10;
 async function fetchAboutUs() {
     const query = `*[_type == "aboutUs"][0]`;
     const res = await client.fetch(query);

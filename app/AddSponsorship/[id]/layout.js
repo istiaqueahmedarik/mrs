@@ -7,7 +7,7 @@ async function loadData()
   const res =  client.fetch(query);
   return res;
 }
-export const revalidate = 3600;
+export const revalidate = 10;
 async function loadSponsorData(id) {
     const query = `*[_type == "sponsorPage"][${id}]`;
     const res = await client.fetch(query);

@@ -2,7 +2,7 @@ import React from 'react';
 import '../app/JoinUs.css';
 import Link from 'next/link';
 import client from '@/lib/sanity';
-export const revalidate = 3600;
+export const revalidate = 10;
 const GetJoinUsAndFooter = async () => {
     const query = `*[_type == "joinUsAndFooter"][0]`;
     const res = await client.fetch(query);

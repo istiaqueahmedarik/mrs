@@ -2,7 +2,7 @@ import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/com
 import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
-export const revalidate = 3600;
+export const revalidate = 10;
 async function fetchData() {
   const query = `*[_type == "events"]  | order(date desc)`;
   const res = await client.fetch(query);
