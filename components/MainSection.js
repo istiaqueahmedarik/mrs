@@ -3,6 +3,7 @@ import '../app/MainSec.css';
 import Link from 'next/link';
 import client, { getClient, urlFor } from '@/lib/sanity';
 import { groq } from 'next-sanity';
+import TypeWriting from './TypeWriting';
 export const revalidate = 3600;
 async function fetchMainSec() {
   const query = `*[_type == "mainSection"][0]`;
@@ -15,9 +16,13 @@ const MainSection = async() => {
     // if (!mainSection) return <div>Loading...</div>;
   return (
     <div className='top-[5rem]  relative lg:grid lg:grid-rows-[1fr]  text-left justify-around'>
-    <div className='grid content-center lg:w-fit md:w-3/4  m-auto '>
-      <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center lg:text-left w-full text-white font-bold m-2.5 p-0 font-custom'>{data.title}</h1>
-      <h4 className='text-lg sm:text-xl md:text-1xl lg:text-2xl text-center sm:text-center md:text-center lg:text-center w-full text-white font-light m-2.5 p-0 font-custom'>{data.subTitle}</h4>
+    <div className='grid place-content-center lg:w-fit md:w-3/4  m-auto '>
+      <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center  w-full text-white font-bold m-2.5 p-0 font-custom '>{data.title}</h1>
+      <span className='text-center m-auto grid place-content-center w-full'>
+        {/* {data.subTitle} */}
+        <TypeWriting textArray={data.typeWriting} className="text-center"/>
+        </span>
+       
       <div className='items-center flex flex-col md:flex-row gap-2.5 h-min justify-start overflow-hidden relative w-full p-[3%]'>
         <Link href={`/${data.button1Link}`} className='content-center items-center bg-[#b9d6f2] flex flex-row justify-center overflow-hidden relative w-full md:w-6/12 text-black px-5 py-2.5 rounded-full'>{data.button1Text}</Link>
         <Link href={`${data.button2Link}`} className='content-center items-center bg-white flex flex-row justify-center overflow-hidden relative w-full md:w-6/12 text-black px-5 py-2.5 rounded-full'>{data.button2Text}</Link>

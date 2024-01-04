@@ -14,6 +14,12 @@ export default {
         type: 'string',
       },
       {
+        name: 'typeWriting',
+        title: 'Type Writing',
+        type: 'array',
+        of: [{ type: 'string' }],
+      },
+      {
         name: 'button1Text',
         title: 'Button 1 Text',
         type: 'string',
