@@ -5,7 +5,7 @@ import { ImageSlider } from '@/components/ImageSlider'
 import { client } from '@/sanity/lib/client';
 import TypeWriting from '@/components/TypeWriting';
 import LoadingSkeleton from '@/components/Loading';
-export const revalidate = 10;
+export const revalidate = 3600
 async function loadData()
 {
   const query = `*[_type == "singleImageCard"]`;

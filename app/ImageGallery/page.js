@@ -3,7 +3,7 @@ import Navbar from '@/components/NavBar'
 import { ImageGallery } from '@/components/component/image-gallery'
 import client from '@/lib/sanity';
 import React from 'react'
-export const revalidate = 10;
+export const revalidate = 3600
 async function loadData()
 {
   const query = `*[_type == "singleImageCard"]`;

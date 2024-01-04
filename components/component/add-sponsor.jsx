@@ -4,7 +4,7 @@ import BlockContent from '@sanity/block-content-to-react';
 
 import client from '@/lib/sanity'
 import Link from 'next/link';
-export const revalidate = 10;
+export const revalidate = 3600
 async function loadSponsorData(id) {
   const query = `*[_type == "sponsorPage"]`
   const res = await client.fetch(query)

@@ -1,7 +1,7 @@
 
 import { Announcement } from '@/components/component/announcement'
 
-export const revalidate = 10;
+export const revalidate = 3600
 export default function page() {
   return (
     <div className='top-[2rem]  relative  AnnouncementContainer'>

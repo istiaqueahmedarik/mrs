@@ -5,7 +5,7 @@ import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
 import { AddSponsor } from "@/components/component/add-sponsor";
-export const revalidate = 10;
+export const revalidate = 3600
 async function loadSponsorData() {
     const query = `*[_type == "sponsorPage"]`;
     const res = await client.fetch(query);
