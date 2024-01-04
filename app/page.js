@@ -23,7 +23,6 @@ export default async function Home() {
         {/* <Team/> */}
         {/* <Sponsor/> */}
         <DonateUs/>
-        <LoadingSkeleton/>
         
       </div>
     </main>
