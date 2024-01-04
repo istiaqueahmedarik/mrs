@@ -4,6 +4,7 @@ import DonateUs from '@/components/DonateUs'
 import { ImageSlider } from '@/components/ImageSlider'
 import { client } from '@/sanity/lib/client';
 import TypeWriting from '@/components/TypeWriting';
+export const revalidate = 3600;
 async function loadData()
 {
   const query = `*[_type == "singleImageCard"]`;
