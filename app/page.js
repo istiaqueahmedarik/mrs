@@ -4,6 +4,7 @@ import DonateUs from '@/components/DonateUs'
 import { ImageSlider } from '@/components/ImageSlider'
 import { client } from '@/sanity/lib/client';
 import TypeWriting from '@/components/TypeWriting';
+import LoadingSkeleton from '@/components/Loading';
 export const revalidate = 10;
 async function loadData()
 {
@@ -22,6 +23,7 @@ export default async function Home() {
         {/* <Team/> */}
         {/* <Sponsor/> */}
         <DonateUs/>
+        <LoadingSkeleton/>
         
       </div>
     </main>
