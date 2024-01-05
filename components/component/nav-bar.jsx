@@ -135,7 +135,7 @@ export function NavBar({data}) {
                   <NavigationMenuLink key={index} asChild>
                 <Link
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  href={`/team/${index}`}>
+                  href={`/team/${team.teamNameSlug.current}`}>
                   <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">{team.teamName}</div>
                 </Link>
               </NavigationMenuLink>
