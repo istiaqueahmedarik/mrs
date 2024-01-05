@@ -5,7 +5,7 @@ import client, { urlFor } from "@/lib/sanity";
 export const revalidate = 3600
 async function loadTeamData(id)
 {
-  const query = `*[_type == "teamPage"][${id}]`;
+  const query = `*[_type == "teamPage" && teamNameSlug.current == "${id}"][0]`;
   const res = await client.fetch(query);
   return res;
 }
