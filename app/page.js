@@ -3,6 +3,7 @@ import AboutUs from '@/components/AboutUs'
 import DonateUs from '@/components/DonateUs'
 import { client } from '@/sanity/lib/client';
 import { TeamLead } from '@/components/component/team-lead';
+import Timeline from '@/components/Timeline';
 export const revalidate = 3600
 async function loadData()
 {
@@ -18,6 +19,7 @@ async function loadLead()
 }
 export default async function Home() {
   const [aboutUs,teamLead] = await Promise.all([loadData(),loadLead()]);
+  console.log(teamLead);
   return (
     <main>
       <div className=''>
@@ -26,7 +28,7 @@ export default async function Home() {
         <AboutUs dt={aboutUs}/>
         {/* <Team/> */}
         {/* <Sponsor/> */}
-        <TeamLead data={teamLead}/>
+        <Timeline data={teamLead}/>
         <DonateUs/>
         
       </div>
