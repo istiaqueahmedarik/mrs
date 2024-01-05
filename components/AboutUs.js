@@ -69,8 +69,6 @@ export default async function AboutUs({ dt }) {
                 </div>
             </div>
 
-
         </div>
     );
 };
-
