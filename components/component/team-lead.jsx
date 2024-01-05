@@ -6,7 +6,7 @@ export function TeamLead({data}) {
   return (
     (<div>
       <div className="text-center">
-        <h2 className="text-2xl font-semibold mb-2">Main Team</h2>
+        <h2 className="text-4xl font-semibold mb-2">Lead Team</h2>
         </div>
       <div
       className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">

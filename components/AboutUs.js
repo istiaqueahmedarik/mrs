@@ -16,8 +16,8 @@ export default async function AboutUs({ dt }) {
 
 
     return (
-        <div className='place-content-center bg-[#141a2b]' id="aboutUs">
-            <div className="grid lg:grid-cols-[1fr_1fr] w-full h-full justify-around text-center content-center m-auto p-[53px] md:p-10">
+        <div className='place-content-center pt-10 bg-[#141A2B]' id="aboutUs">
+            <div className="grid lg:grid-cols-[1fr_1fr] w-full h-full justify-around text-center content-center m-auto p-[53px] md:p-10 ">
                 <div className="sm:text-center grid content-center w-full md:w-6/12 text-[1.5em] font-[bolder] m-auto">
                     <h1 className="text-[1.5em] font-custom font-[bolder] my-[3%] sm:text-center">{data.title}</h1>
                 </div>
@@ -30,7 +30,7 @@ export default async function AboutUs({ dt }) {
 
 
 
-            <div className="grid lg:grid-cols-[1fr_1fr] w-full h-full justify-around text-center content-center m-auto p-[53px] md:p-10">
+            <div className="grid lg:grid-cols-[1fr_1fr] w-full h-full justify-around text-center content-center m-auto p-[53px] md:p-10 ">
                 <div className="sm:text-center grid content-center w-full md:w-12/12 text-[1.5em] font-[bolder] m-auto">
                     <Image
                         src={urlFor(data.section1.image).url()}
