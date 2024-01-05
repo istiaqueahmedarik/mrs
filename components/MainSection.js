@@ -16,6 +16,7 @@ const MainSection = async() => {
     // if (!mainSection) return <div>Loading...</div>;
   return (
     <div className='top-[5rem]  relative lg:grid lg:grid-rows-[1fr]  text-left justify-around bg-[#141A2B]'>
+    <div className='bg-transparent z-10'>
     <div className='grid place-content-center lg:w-fit md:w-3/4  m-auto '>
       <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center  w-full text-white font-bold m-2.5 p-0 font-custom '>{data.title}</h1>
       <span className='text-center m-auto grid place-content-center w-full'>
@@ -31,7 +32,8 @@ const MainSection = async() => {
     <div className='bg-transparent rounded-md object-cover w-full group-hover:scale-110 transform transition ease-in-out duration-200 m-auto'>
       <Image src={urlFor(data.image).url()} alt="Big Picture" className="" width={600} height={600} />
     </div>
-    <GlowingBlobGradientLight className="blur-lg absolute top-0 left-0 w-full h-full" />
+    </div>
+    <GlowingBlobGradientLight className="blur-lg fixed top-0 left-0 w-full h-full" />
   </div>
   
   );

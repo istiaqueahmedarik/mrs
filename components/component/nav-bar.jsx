@@ -12,7 +12,7 @@ export function NavBar({data}) {
   const scrollPos = useScroll();
   console.log(scrollPos);
   return (
-    ( <header className={`w-full ${scrollPos<=20?"bg-transparent":""} fixed top-0 z-10 flex items-center justify-between px-6 py-4 bg-[#111827] text-white `}>
+    ( <header className={`w-full ${scrollPos<=20?"bg-transparent":""} fixed top-0 z-20 flex items-center justify-between px-6 py-4 bg-[#111827] text-white `}>
     <div className="flex items-center space-x-5">
       <Image alt="" className="w-10 h-10 rounded-full" height={100} width={100} src="/icon.jpg"/>
       <p className="text-lg font-bold lg:grid md:hidden sm:hidden hidden">Mongol Barta</p>
