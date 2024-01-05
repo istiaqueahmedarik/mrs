@@ -27,7 +27,7 @@ export function TeamList(props) {
           className="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-500">
           MEMBERS
         </h2>
-        <div className={`grid grid-cols-2 md:grid-cols-${props.data.length>=4?4:2} gap-8 justify-items-center`}>
+        <div className={`grid grid-cols-2 md:grid-cols-${Math.min(props.data.length,4)} gap-8 justify-items-center`}>
         {props.data.map((team, index) => {
         return (
           <SingleMemberCard key={index} image={urlFor(team.image).url()} name={team.name} subtitle={team.subtitle}/>
