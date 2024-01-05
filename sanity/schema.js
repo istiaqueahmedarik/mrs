@@ -10,7 +10,8 @@ import Achievement from "./schemas/Achievement";
 import ContactUs from "./schemas/ContactUs";
 import Events from "./schemas/Events";
 import imageList from "./schemas/imageList";
+import Leader from "./schemas/Leader";
 
 export const schema = {
-  types: [MainSec,AboutUs,Events,Sponsors,Footer,SingleImageCard,teamPage,Achievement,ContactUs,imageList],
+  types: [MainSec,AboutUs,Events,Sponsors,Footer,SingleImageCard,teamPage, Leader, Achievement,ContactUs,imageList],
 }
