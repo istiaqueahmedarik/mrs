@@ -33,7 +33,7 @@ const MainSection = async() => {
       <Image src={urlFor(data.image).url()} alt="Big Picture" className="" width={600} height={600} />
     </div>
     </div>
-    <GlowingBlobGradientLight className="blur-lg fixed top-0 left-0 w-full h-full" />
+    <GlowingBlobGradientLight className="blur-lg absolute top-0 left-0 w-full h-full" />
   </div>
   
   );
