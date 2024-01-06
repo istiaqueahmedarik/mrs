@@ -6,15 +6,9 @@ import { HoverCardTrigger, HoverCardContent, HoverCard } from "@/components/ui/h
 import client, { urlFor } from "@/lib/sanity";
 import BlockContent from '@sanity/block-content-to-react';
 import Image from "next/image";
-export const revalidate = 3600
-async function loadData()
-{
-  const query = `*[_type == "imageItem"]`;
-  const res = await client.fetch(query);
-  return res;
-}
-export async function ImageList() {
-  const data =  await loadData();
+
+export async function ImageList({data}) {
+
   console.log(data)
   return (
     (<div className="mb-[4%]">
@@ -29,23 +23,23 @@ export async function ImageList() {
           <Card className="relative group overflow-hidden rounded-lg">
             <Link href={item.link}>
               <Image
-                alt={item.caption}
-                className="object-cover w-full h-60"
-                height="300"
+                alt={item.title}
+                className="object-cover w-full h-96"
+                height="400"
                 src={urlFor(item.image).url()}
                 style={{
-                  aspectRatio: "400/300",
+                  aspectRatio: "500/400",
                   objectFit: "cover",
                 }}
                 width="400" />
-              <div className="bg-white p-4 dark:bg-gray-950">
-                <h3 className="font-semibold text-lg md:text-xl">{item.caption}</h3>
-                <Button variant="link">Learn more</Button>
+              <div className=" p-4 dark:bg-gray-950">
+                <h3 className="font-semibold text-lg md:text-xl text-white bg-[#111827]">{item.title}</h3>
+                {/* <Button variant="link">Learn more</Button> */}
               </div>
             </Link>
           </Card>
         </HoverCardTrigger>
-        <HoverCardContent className="w-80">
+        <HoverCardContent className="w-80 bg-black">
           <div className="space-y-1">
             <BlockContent blocks={item.description} />
           </div>

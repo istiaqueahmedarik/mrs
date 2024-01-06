@@ -16,11 +16,7 @@ export default {
           hotspot: true,
         },
       },
-      {
-        name: 'caption',
-        title: 'Caption',
-        type: 'string',
-      },
+      
       {
         name: 'description',
         title: 'Description',
