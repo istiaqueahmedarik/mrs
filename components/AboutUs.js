@@ -31,7 +31,7 @@ export default async function AboutUs({ dt }) {
 
 
             <div className="grid lg:grid-cols-[1fr_1fr] w-full h-full justify-around text-center content-center m-auto p-[53px] md:p-10 ">
-                <div className="sm:text-center grid content-center w-full md:w-12/12 text-[1.5em] font-[bolder] m-auto">
+                <div className="sm:text-center grid content-center w-fit text-[1.5em] font-[bolder] m-auto">
                     <Image
                         src={urlFor(data.section1.image).url()}
                         alt=""
@@ -58,7 +58,7 @@ export default async function AboutUs({ dt }) {
                     </h1>
                     <BlockContent blocks={data.section2.text} />
                 </div>
-                <div className="sm:text-center grid content-center w-full md:w-12/12 text-[1.5em] font-[bolder] m-auto">
+                <div className="sm:text-center grid content-center w-fit text-[1.5em] font-[bolder] m-auto">
                     <Image
                         src={urlFor(data.section2.image).url()}
                         alt=""

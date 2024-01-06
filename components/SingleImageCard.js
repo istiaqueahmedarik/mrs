@@ -6,11 +6,11 @@ function SingleImageCard(props) {
     <div className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer hover:filter hover:brightness-125 transition-all duration-200">
           <Image
             alt="Gallery Image 2"
-            className="object-cover w-full h-64 group-hover:scale-110 transform transition ease-in-out duration-200"
-            height="600"
+            className="object-cover w-full h-72 group-hover:scale-110 transform transition ease-in-out duration-200"
+            height="800"
             src={props.image}
             style={{
-              aspectRatio: "600/600",
+              aspectRatio: "800/800",
               objectFit: "cover",
             }}
             width="600"
