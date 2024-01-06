@@ -1,5 +1,6 @@
 import Navbar from '@/components/NavBar'
 import { Achievment } from '@/components/component/achievment'
+import { client } from '@/sanity/lib/client'
 import React from 'react'
 export const revalidate = 3600
 async function loadData() {
