@@ -8,13 +8,13 @@ export const revalidate = 3600
 async function loadData()
 {
   const query = `*[_type == "singleImageCard"]`;
-  const res = await client.fetch(query);
+  const res = await client.fetch(query,{ next: { revalidate: 3600 } });
   return res;
 }
 async function loadLead()
 {
   const query = `*[_type == "Leader"]  | order(year desc)`;
-  const res = await client.fetch(query);
+  const res = await client.fetch(query,{ next: { revalidate: 3600 } });
   return res;
 }
 export default async function Home() {

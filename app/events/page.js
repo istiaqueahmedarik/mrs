@@ -5,7 +5,7 @@ import { client } from '@/sanity/lib/client';
 export const revalidate = 3600
 async function fetchData() {
   const query = `*[_type == "events"]  | order(date desc)`;
-  const res = await client.fetch(query);
+  const res = await client.fetch(query,{ next: { revalidate: 3600 } });
   return res;
 }
 export default async function page() {

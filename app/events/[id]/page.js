@@ -5,7 +5,7 @@ import React from 'react'
 export const revalidate = 3600
 async function fetchData(id) {
     const query = `*[_type == "events" && slug.current == "${id}"][0]`;
-    const res = await client.fetch(query);
+    const res = await client.fetch(query,{ next: { revalidate: 3600 } });
     return res;
   }
 async function page({params}) {

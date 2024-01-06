@@ -7,7 +7,7 @@ import Link from 'next/link';
 export const revalidate = 3600
 async function loadSponsorData(id) {
   const query = `*[_type == "sponsorPage"]`
-  const res = await client.fetch(query)
+  const res = await client.fetch(query,{ next: { revalidate: 3600 } })
   return res
 }
 export async function AddSponsor() {

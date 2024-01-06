@@ -6,7 +6,7 @@ import React from 'react'
 export const revalidate = 3600
 async function loadSponsorData(id) {
     const query = `*[_type == "sponsorPage"][${id}]`;
-    const res = await client.fetch(query);
+    const res = await client.fetch(query,{ next: { revalidate: 3600 } });
     return res;
 }
 export default async function page({params}) {

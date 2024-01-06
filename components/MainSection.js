@@ -7,7 +7,7 @@ import TypeWriting from './TypeWriting';
 export const revalidate = 3600
 async function fetchMainSec() {
   const query = `*[_type == "mainSection"][0]`;
-  const res = await client.fetch(query);
+  const res = await client.fetch(query,{ next: { revalidate: 3600 } });
   return res;
 }
 const MainSection = async() => {

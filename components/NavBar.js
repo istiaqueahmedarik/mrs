@@ -5,7 +5,7 @@ export const revalidate = 3600
 async function loadTeamData()
 {
   const query = `*[_type == "teamPage"]`;
-  const res = await client.fetch(query);
+  const res = await client.fetch(query,{ next: { revalidate: 3600 } });
   return res;
 }
 

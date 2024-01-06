@@ -6,7 +6,7 @@ import { ImageSlider } from './ImageSlider';
 export const revalidate = 3600
 async function fetchAboutUs() {
     const query = `*[_type == "aboutUs"][0]`;
-    const res = await client.fetch(query);
+    const res = await client.fetch(query,{ next: { revalidate: 3600 } });
     return res;
 }
 

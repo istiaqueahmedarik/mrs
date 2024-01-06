@@ -6,7 +6,7 @@ export const revalidate = 3600
 async function loadTeamData(id)
 {
   const query = `*[_type == "teamPage" && teamNameSlug.current == "${id}"][0]`;
-  const res = await client.fetch(query);
+  const res = await client.fetch(query,{ next: { revalidate: 3600 } });
   return res;
 }
 export default async function Page({ params }) {

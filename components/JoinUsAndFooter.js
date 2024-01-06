@@ -5,7 +5,7 @@ import client from '@/lib/sanity';
 export const revalidate = 3600
 const GetJoinUsAndFooter = async () => {
     const query = `*[_type == "joinUsAndFooter"][0]`;
-    const res = await client.fetch(query);
+    const res = await client.fetch(query,{ next: { revalidate: 3600 } });
     return res;
 }
 async function JoinUsAndFooter() {

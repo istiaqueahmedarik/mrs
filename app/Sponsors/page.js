@@ -8,7 +8,7 @@ import { AddSponsor } from "@/components/component/add-sponsor";
 export const revalidate = 3600
 async function loadSponsorData() {
     const query = `*[_type == "sponsorPage"]`;
-    const res = await client.fetch(query);
+    const res = await client.fetch(query,{ next: { revalidate: 3600 } });
     return res;
 }
 export default async function Page() {

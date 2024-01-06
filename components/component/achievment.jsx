@@ -5,7 +5,7 @@ import Image from 'next/image'
 export const revalidate = 3600
 async function loadData() {
   const query = `*[_type == "achievementsPage"]  | order(time desc)`
-  const res = await client.fetch(query)
+  const res = await client.fetch(query,{ next: { revalidate: 3600 } })
   return res
 }
 export async function Achievment() {
