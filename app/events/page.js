@@ -11,7 +11,7 @@ async function fetchData() {
 export default async function page() {
   const data = await fetchData();
   return (
-    <div className='top-[2rem]  relative  AnnouncementContainer'>
+    <div className='top-[2rem]  relative  AnnouncementContainer  mb-2'>
         <Announcement data={data}/>
     </div>
 

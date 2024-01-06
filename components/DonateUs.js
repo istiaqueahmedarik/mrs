@@ -3,7 +3,7 @@ import React from 'react';
 
 const DonateUs = () => {
     return (
-        <div className='grid place-content-center text-center  pt-[3%] pb-[3%] bg-[#141A2B]'>
+        <div className='grid place-content-center text-center  pt-[3%] pb-[3%] bg-[#141A2B]  mt-12 md:mt-8 lg:mt-5'>
             <h1 className='text-4xl font-bold mb-4'>Donate Us</h1>
             <p className='text-lg mb-8'>
 
