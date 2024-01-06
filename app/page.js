@@ -13,7 +13,7 @@ async function loadData()
 }
 async function loadLead()
 {
-  const query = `*[_type == "Leader"]`;
+  const query = `*[_type == "Leader"]  | order(year desc)`;
   const res = await client.fetch(query);
   return res;
 }
