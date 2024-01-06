@@ -29,7 +29,6 @@ export default async function Home() {
         {/* <Team/> */}
         {/* <Sponsor/> */}
         <Timeline data={teamLead}/>
-        <DonateUs/>
         
       </div>
     </main>

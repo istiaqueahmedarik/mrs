@@ -2,11 +2,18 @@ import Navbar from '@/components/NavBar'
 import { Achievment } from '@/components/component/achievment'
 import React from 'react'
 export const revalidate = 3600
-export default function page() {
+async function loadData() {
+  const query = `*[_type == "achievementsPage"]  | order(time desc)`
+  const res = await client.fetch(query,{ next: { revalidate: 3600 } })
+  return res
+}
+export default async function page() {
+  const data = await loadData()
+
   return (
     <div className=''>
         
-        <Achievment/>
+        <Achievment data={data}/>
     </div>
   )
 }

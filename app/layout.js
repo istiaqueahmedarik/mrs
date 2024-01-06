@@ -6,6 +6,7 @@ import { NavBar } from '@/components/component/nav-bar'
 import Script from 'next/script'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Toaster } from '@/components/ui/toaster'
+import DonateUs from '@/components/DonateUs'
 const inter = Inter({ subsets: ['latin'] })
 export const revalidate = 3600
 export const metadata = {
@@ -20,6 +21,8 @@ export default function RootLayout({ children }) {
         <Navbar className=""/>
         <SpeedInsights/>
         {children}
+        <DonateUs/>
+
         <JoinUsAndFooter/>
         <Toaster />
         </body>

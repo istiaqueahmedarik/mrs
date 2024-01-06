@@ -2,14 +2,8 @@ import BlockContent from '@sanity/block-content-to-react'
 import { Badge } from '@/components/ui/badge'
 import client, { urlFor } from '@/lib/sanity'
 import Image from 'next/image'
-export const revalidate = 3600
-async function loadData() {
-  const query = `*[_type == "achievementsPage"]  | order(time desc)`
-  const res = await client.fetch(query,{ next: { revalidate: 3600 } })
-  return res
-}
-export async function Achievment() {
-  const data = await loadData()
+
+export async function Achievment({data}) {
   
   return (
     <div className="top-[3rem]  relative  min-h-screen bg-[#111827] text-gray-200">
