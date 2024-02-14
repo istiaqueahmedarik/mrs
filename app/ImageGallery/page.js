@@ -1,3 +1,4 @@
+import ImageModals from '@/components/ImageModals';
 import JoinUsAndFooter from '@/components/JoinUsAndFooter'
 import Navbar from '@/components/NavBar'
 import { ImageGallery } from '@/components/component/image-gallery'
@@ -11,9 +12,17 @@ async function loadData()
   return res;
 }
 export default async function page() {
+  const data = await loadData();
   return (
-    <div className='top-[2rem]  relative'>
-        <ImageGallery data = {await loadData()}/>
+    <div className='top-[2rem]  relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-10'>
+      {
+        data.map((item, index) => (
+          
+          <div  key={index}>
+            <ImageModals data={item} />
+          </div>
+        ))
+      }
     </div>
   )
 }

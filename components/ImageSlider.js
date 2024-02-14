@@ -14,7 +14,7 @@ import { urlFor } from "@/lib/sanity"
 
 export function ImageSlider({ data }) {
     return (
-        <div className="m-auto grid place-content-center">
+        <div className="ml-[4rem] mr-[4rem]">
             <h1 className="text-center">
                 <span className="text-2xl font-bold">Our</span>
                 <span className="text-2xl font-bold text-cyan-600"> Gallery</span>
@@ -22,7 +22,7 @@ export function ImageSlider({ data }) {
             <Carousel>
                 <CarouselContent>
                     {data.map((image, index) => (
-                        <CarouselItem key={index} className="">
+                        <CarouselItem key={index} className=" ">
                             <SingleImageCard image={urlFor(image.image).url()} title={image.Title} desc={image.description} />
                         </CarouselItem>
 

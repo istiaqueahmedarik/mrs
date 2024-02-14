@@ -47,7 +47,9 @@ export default async function AboutUs({ dt }) {
                     <BlockContent blocks={data.section1.text} />
                 </div>
             </div>
+            <div className='m-auto grid place-content-center'>
             <ImageSlider data={dt} />
+                </div>
 
 
             <div className="grid lg:grid-cols-[1fr_1fr] w-full h-full justify-around text-center content-center m-auto p-[53px] md:p-10">
