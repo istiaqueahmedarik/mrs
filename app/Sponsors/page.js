@@ -16,11 +16,13 @@ export default async function Page() {
     
     return (
         <div>
+            <AddSponsor/>
+
             {Alldata.map((data, index1) => {
                 return(
-                    <div key={index1} className='top-[2rem]  relative  MainContainer'>
+                    <div key={index1} className=' bottom-[2rem]  relative  MainContainer'>
             <Sponsor id={index1} />
-            {data.sponsors.map((i, index) => {
+            {/* {data.sponsors.map((i, index) => {
                 return (
                     (index % 2 == 0) ? (
                         <div key={index} className="grid grid-rows-1 p-[1%] place-content-center grid-cols-[1fr_2fr] m-[4%] gap-3 bg-[#1c253a] rounded-md">
@@ -42,13 +44,12 @@ export default async function Page() {
                         </div>
                     )
                 )
-            })}
+            })} */}
 
 
         </div>
                 )
             })}
-            <AddSponsor/>
         </div>
     )
 }

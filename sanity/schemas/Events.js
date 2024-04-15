@@ -2,7 +2,7 @@ import { defineArrayMember } from "sanity";
 
 export default {
     name: 'events',
-    title: 'Events',
+    title: 'Blogs',
     type: 'document',
     fields: [
       {

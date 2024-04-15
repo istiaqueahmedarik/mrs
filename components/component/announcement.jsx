@@ -11,11 +11,11 @@ export async function Announcement({data}) {
       key="1"
       className="bg-[#111827] text-white min-h-screen py-10 px-4 md:px-8 lg:px-16">
       <header className="flex justify-between items-center mb-10">
-        <h1 className="text-3xl font-bold">Competitions</h1>
+        <h1 className="text-3xl font-bold">Blogs</h1>
       </header>
       {data.map((item, index) => {
         return(
-          <Link href={`/events/${item.slug.current}`} key={index}>
+          <Link href={`/blogs/${item.slug.current}`} key={index}>
             <Card  className="bg-[#2d3748] rounded-lg p-2 mb-6">
           <CardHeader>
             <CardTitle

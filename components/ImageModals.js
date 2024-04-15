@@ -18,7 +18,7 @@ function ImageModals({data}) {
   console.log(data.Title,data.description)
   return (
     <Drawer>
-    <DrawerTrigger> <div className='cursor-pointer flex flex-col m-3 bg-[#222a3e] w-fit p-1 rounded-md text-white'>
+    <DrawerTrigger> <div className='cursor-pointer flex flex-col m-3 bg-[#222a3e] w-fit p-1 rounded-md text-white '>
           <Image height={400} width={400} src={imageUrl} alt={data.Title} />
           <h1>{data.Title}</h1>
           <p>{data.description}</p>

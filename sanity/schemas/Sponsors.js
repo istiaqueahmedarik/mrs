@@ -9,6 +9,11 @@ export default {
         type: 'string',
       },
       {
+        name: 'color',
+        title: 'Color(Must be in hex format)',
+        type: 'string',
+      },
+      {
         name: 'subtitle',
         title: 'Subtitle',
         type: 'string',

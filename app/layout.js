@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
         <Navbar className=""/>
         <SpeedInsights/>
         {children}
-        <DonateUs/>
 
         <JoinUsAndFooter/>
         <Toaster />

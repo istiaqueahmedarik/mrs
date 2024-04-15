@@ -32,13 +32,14 @@ export async function AddSponsor() {
                 <CardContent className="space-y-4">
                 <BlockContent blocks={sponsor.benefits} />
                   <Button
-                    className="text-black border-gray-300"
+                    className={`text-black border-gray-300 bg-[${sponsor.color}] `}
+                    style={{backgroundColor: sponsor.color}}
                     variant="outline"
                   >
                     <Link href={`/AddSponsorship/${index}`}>Become a {sponsor.type} Sponsor</Link>
                     
                   </Button>
-                </CardContent>
+                </CardContent> 
               </Card>
             )
           })}

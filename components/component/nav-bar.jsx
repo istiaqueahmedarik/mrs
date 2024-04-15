@@ -65,10 +65,19 @@ export function NavBar({data}) {
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-              href="/events">
+              href="/blogs">
+              <CalendarDays className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Blogs</div> 
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              href="/Competitions">
               <CalendarDays className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Competitions</div> 
             </NavigationMenuLink>
           </NavigationMenuItem>
+
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
@@ -185,10 +194,20 @@ export function NavBar({data}) {
               <NavigationMenuLink asChild>
                 <Link
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  href={`/events`}>
+                  href={`/blogs`}>
+                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Blogs </div>
+                </Link>
+              </NavigationMenuLink>
+
+
+              <NavigationMenuLink asChild>
+                <Link
+                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  href={`/Competitions`}>
                   <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Competitions </div>
                 </Link>
               </NavigationMenuLink>
+
               <NavigationMenuLink asChild>
                 <Link
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"

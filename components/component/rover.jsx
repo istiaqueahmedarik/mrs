@@ -1,7 +1,5 @@
 
-import { Button } from "@/components/ui/button"
-import MeshComponent, { TD } from "../MeshComponent";
-import { Canvas } from "@react-three/fiber";
+import { TD } from "../MeshComponent";
 
 export function Rover() {
   return (
