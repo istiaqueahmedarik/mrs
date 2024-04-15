@@ -8,7 +8,7 @@ export default function TeamTop({title,description,image}) {
   return (
     <div key="1" className="relative bg-[#111827] text-white py-20 px-8 md:flex md:items-center md:justify-between grid grid-rows-[1fr_2fr] gap-3">
       <div className="md:w-1/2">
-        <h1 className="xl:text-9xl lg:text-8xl md:text-5xl sm:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400 cursor-text">
+        <h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400 cursor-text">
           {title}
         </h1>
         <p className="text-xl mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400">
