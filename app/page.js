@@ -11,15 +11,15 @@ async function loadData()
   const res = await client.fetch(query,{ next: { revalidate: 3600 } });
   return res;
 }
-async function loadLead()
+async function loadTime()
 {
-  const query = `*[_type == "Leader"]  | order(year desc)`;
+  const query = `*[_type == "achievementsPage"]  | order(time desc)`
   const res = await client.fetch(query,{ next: { revalidate: 3600 } });
   return res;
 }
+
 export default async function Home() {
-  const [aboutUs,teamLead] = await Promise.all([loadData(),loadLead()]);
-  console.log(teamLead);
+  const [aboutUs, timeLine] = await Promise.all([loadData(), loadTime()]);
   return (
     <main>
       <div className=''>
@@ -28,7 +28,7 @@ export default async function Home() {
         <AboutUs dt={aboutUs}/>
         {/* <Team/> */}
         {/* <Sponsor/> */}
-        <Timeline data={teamLead}/>
+        <Timeline data={timeLine}/>
         <DonateUs/>
         
       </div>

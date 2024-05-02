@@ -18,11 +18,11 @@ const MainSection = async() => {
     <div className='top-[2rem] md:top-[1rem] lg:top-[0rem]  relative lg:grid lg:grid-rows-[1fr]  text-left justify-around bg-[#141A2B] h-screen'>
     <div className='bg-transparent z-10 grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1'>
     <div className='grid place-content-center lg:w-fit md:w-3/4  m-auto '>
-      <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center  w-full text-white font-bold mb-2 p-0 '>{data.title}</h1>
+      <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center  w-full text-white font-bold mb-2 p-0 '>{data.title}</h1>
       <span className='text-left grid  w-full'>
         {/* {data.subTitle} */}
         {data.typeWriting.map((item, index) => (
-          <p key={index} className='text-center md:text-left'>{item}</p>
+          <p key={index} className='text-center md:text-left text-xl'>{item}</p>
         ))}
       </span>
        

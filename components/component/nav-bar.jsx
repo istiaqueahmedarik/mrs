@@ -1,7 +1,7 @@
 "use client"
 import { NavigationMenuLink, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu"
 import client from "@/lib/sanity";
-import { Award, CalendarDays, Contact, GalleryHorizontalEnd, HeartHandshake, HelpingHand, Home, ImagePlusIcon, Rotate3D, Users } from "lucide-react";
+import { Award, CalendarDays, Contact, GalleryHorizontalEnd, HeartHandshake, HelpingHand, Home, ImagePlusIcon, Users2, Rotate3D, User, Users2s } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link"
 import { useState } from "react";
@@ -28,40 +28,47 @@ export function NavBar({data}) {
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
+            <NavigationMenuLink
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md  px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              href="/Team">
+              <Users2 className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Team</div>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          {/* <NavigationMenuItem>
             <NavigationMenuTrigger>
-            <Users className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Teams</div> 
+            <Users className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Team</div> 
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid bg-gray-800 w-[200px] p-2 text-white">
-                {data.map((team, index) =>{
+                 {data.map((team, index) =>{
                   return(
                     <NavigationMenuLink key={index} asChild>
                   <Link
                     className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    href={`/team/${team.teamNameSlug.current}`}>
+                    href={`/Team/${team.teamNameSlug.current}`}>
                     <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">{team.teamName}</div>
                   </Link>
                 </NavigationMenuLink>
                   )
-                })}
+                })} 
                
               </div>
             </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
+          </NavigationMenuItem> */}
+          {/* <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Rover">
                <Rotate3D className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Rover</div> 
             </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
+          </NavigationMenuItem> */}
+          {/* <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
               href="/Achievement">
                <Award className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Achievements</div> 
             </NavigationMenuLink>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
           <NavigationMenuItem>
             <NavigationMenuLink
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
@@ -132,28 +139,35 @@ export function NavBar({data}) {
             href="/">
              <Home className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Home</div> 
           </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md  px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+              href="/Team">
+              <Users2 className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Team</div>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger>
           <Users className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Teams</div> 
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="grid bg-gray-800 w-[200px] p-2 text-white">
-              {data.map((team, index) =>{
+               {data.map((team, index) =>{
                 return(
                   <NavigationMenuLink key={index} asChild>
                 <Link
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  href={`/team/${team.teamNameSlug.current}`}>
+                  href={`/Team/${team.teamNameSlug.current}`}>
                   <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">{team.teamName}</div>
                 </Link>
               </NavigationMenuLink>
                 )
-              })}
+              })} 
              
             </div>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         
         <NavigationMenuItem>
             <NavigationMenuLink
@@ -177,20 +191,20 @@ export function NavBar({data}) {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="grid bg-gray-800 w-[200px] p-2 text-white">
-            <NavigationMenuLink asChild>
+            {/* <NavigationMenuLink asChild>
                 <Link
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   href={`/Rover`}>
                   <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Rover</div>
                 </Link>
-              </NavigationMenuLink>
-              <NavigationMenuLink asChild>
+              </NavigationMenuLink> */}
+              {/* <NavigationMenuLink asChild>
                 <Link
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   href={`/Achievement`}>
                   <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Achievements</div>
                 </Link>
-              </NavigationMenuLink>
+              </NavigationMenuLink> */}
               <NavigationMenuLink asChild>
                 <Link
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"

@@ -13,11 +13,23 @@ export const metadata = {
   title: 'Mongor Barta',
   description: 'Mongor Barta is a club for developing and learning about mars rover and space science',
 }
+import { Manrope } from 'next/font/google'
+import { Chivo } from 'next/font/google'
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
+const chivo = Chivo({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col content-around`}>
+      <body className={`${manrope.className} flex flex-col content-around`}>
         <Navbar className=""/>
         <SpeedInsights/>
         {children}
