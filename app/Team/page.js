@@ -1,4 +1,3 @@
-'use server'
 import { client } from '@/sanity/lib/client';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
