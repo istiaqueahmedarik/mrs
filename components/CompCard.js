@@ -7,7 +7,7 @@ function CompCard(props) {
   return (
     <div class="grid items-center gap-4 p-4">
     <div class="relative overflow-hidden rounded-lg">
-      <Image
+      <Image placeholder="blur" blurDataURL="/icon.jpg"
         src={urlFor(props.imageSrc).url()}
         alt="Cover"
         width="400"

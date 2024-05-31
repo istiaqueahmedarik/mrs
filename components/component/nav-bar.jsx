@@ -15,7 +15,7 @@ export function NavBar({data}) {
   return (
     ( <header className={`w-full ${scrollPos<=20?"bg-transparent":""} fixed top-0 z-20 flex items-center justify-between px-6 py-4 bg-[#111827] text-white `}>
     <div className="flex items-center space-x-5">
-      <Image alt="" className="w-10 h-10 rounded-full" height={100} width={100} src="/icon.jpg"/>
+      <Image placeholder="blur" blurDataURL="/icon.jpg" alt="" className="w-10 h-10 rounded-full" height={100} width={100} src="/icon.jpg"/>
       <p className="text-lg font-bold lg:grid md:hidden sm:hidden hidden">Mongol Barta</p>
     </div>
  
@@ -97,7 +97,7 @@ export function NavBar({data}) {
             <NavigationMenuLink
               className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white ${path.startsWith('/mediaOutreach') ? "bg-gray-700 text-white" : ""} focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
               href="/mediaOutreach">
-               <ImagePlusIcon className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Media Outreach</div> 
+               <Image placeholder="blur" blurDataURL="/icon.jpg"PlusIcon className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Media Outreach</div> 
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>

@@ -6,7 +6,7 @@ import Image from "next/image";
 export function CoverCard(props) {
   return (
     (<Card className="shadow-md rounded-md overflow-hidden max-w-sm">
-      <Image
+      <Image placeholder="blur" blurDataURL="/icon.jpg"
         alt="Cover image"
         className="w-full object-cover"
         height="200"

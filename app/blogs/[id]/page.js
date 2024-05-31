@@ -20,7 +20,7 @@ async function page({params}) {
           components={{
             types: {
               image: props => (
-                <Image src={urlFor(props.value).url()} alt="Big Picture" className="rounded-md mt-[2%] mb-[2%]" width={400} height={400} />
+                <Image placeholder="blur" blurDataURL="/icon.jpg" src={urlFor(props.value).url()} alt="Big Picture" className="rounded-md mt-[2%] mb-[2%]" width={400} height={400} />
               ),
 
             }

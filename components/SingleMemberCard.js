@@ -5,7 +5,7 @@ import Image from 'next/image'
 function SingleMemberCard(props) {
   return (
     <div className="text-center">
-            <Image
+            <Image placeholder="blur" blurDataURL="/icon.jpg"
               alt="Member Name"
               height="96"
               src={props.image}

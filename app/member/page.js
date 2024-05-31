@@ -6,7 +6,7 @@ function page() {
     
       <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-gray-300 p-6 font-sans">
           <div className="bg-gray-800 rounded-full p-1 mb-4">
-              <Image
+              <Image placeholder="blur" blurDataURL="/icon.jpg"
                   alt="Profile Picture"
                   className="rounded-full"
                   height={500}

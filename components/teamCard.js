@@ -6,7 +6,7 @@ import React from 'react'
 function TeamCard(props) {
   return (
       <div className="rounded-lg relative bg-gray-900 p-2 shadow-lg flex flex-auto justify-center">
-              <Image
+              <Image placeholder="blur" blurDataURL="/icon.jpg"
                   alt={`${props.name}`}
               className="parent h-full w-full  transition-transform duration-300  object-cover m-auto scale-100 rounded-lg hover:scale-120 hover:blur-xl"
                   height="100"

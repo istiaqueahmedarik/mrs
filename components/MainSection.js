@@ -15,10 +15,10 @@ const MainSection = async() => {
   
     // if (!mainSection) return <div>Loading...</div>;
   return (
-    <div className='top-[2rem] md:top-[1rem] lg:top-[0rem]  relative lg:grid lg:grid-rows-[1fr]  text-left justify-around bg-[#141A2B] h-screen'>
+    <div className='top-[2rem] md:top-[1rem] lg:top-[0rem]  relative lg:grid lg:grid-rows-[1fr]  text-left justify-around bg-[#141A2B] h-screen p-4'>
     <div className='bg-transparent z-10 grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1'>
     <div className='grid place-content-center lg:w-fit md:w-3/4  m-auto '>
-      <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center  w-full text-white font-bold mb-2 p-0 '>{data.title}</h1>
+      <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center  w-full text-white font-bold mb-2 p-0 '>{data.title}</h1>
       <span className='text-left grid  w-full'>
         {/* {data.subTitle} */}
         {data.typeWriting.map((item, index) => (
@@ -32,7 +32,7 @@ const MainSection = async() => {
       </div> */}
     </div>
     <div className='bg-transparent rounded-md object-cover w-full group-hover:scale-110 transform transition ease-in-out duration-200 m-auto'>
-      <Image src={urlFor(data.image).url()} alt="Big Picture" className="" width={600} height={600} />
+      <Image placeholder="blur" blurDataURL="/icon.jpg" src={urlFor(data.image).url()} alt="Big Picture" className="" width={600} height={600} />
       <GlowingBlobGradientLight className="hidden md:hidden lg:block blur-md absolute top-0 left-0 w-full h-full" />
     </div>
     </div>

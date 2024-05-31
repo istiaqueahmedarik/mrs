@@ -30,7 +30,7 @@ export async function Announcement({data}) {
                 </CardHeader>
                 <CardContent>
                   <figure className="mb-4">
-                    <Image
+                    <Image placeholder="blur" blurDataURL="/icon.jpg"
                       alt="New update"
                       className="w-[200px] h-[200px] rounded-md shadow-md"
                       height="200"
