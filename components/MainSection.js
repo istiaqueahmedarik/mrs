@@ -32,7 +32,7 @@ const MainSection = async() => {
       </div> */}
     </div>
     <div className='bg-transparent rounded-md object-cover w-full group-hover:scale-110 transform transition ease-in-out duration-200 m-auto'>
-      <Image placeholder="blur" blurDataURL="/icon.jpg" src={urlFor(data.image).url()} alt="Big Picture" className="" width={600} height={600} />
+      <Image placeholder="blur" blurDataURL="/iconblur.jpg" src={urlFor(data.image).url()} alt="Big Picture" className="" width={600} height={600} />
       <GlowingBlobGradientLight className="hidden md:hidden lg:block blur-md absolute top-0 left-0 w-full h-full" />
     </div>
     </div>

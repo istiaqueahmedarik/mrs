@@ -30,7 +30,7 @@ export async function Sponsor({id}) {
             <a  key={index} className="group" href="#">
             <div
               className="w-full h-24 bg-white rounded-md overflow-hidden flex items-center justify-center p-4 transition-colors duration-300 ease-in-out transform hover:scale-110">
-              <Image placeholder="blur" blurDataURL="/icon.jpg"
+              <Image placeholder="blur" blurDataURL="/iconblur.jpg"
                 alt="Logo 1"
                 className="w-2/3 h-auto object-contain"
                 height="100"

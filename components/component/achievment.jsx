@@ -26,7 +26,7 @@ export async function Achievment({data}) {
                   className="grid lg:grid-cols-[1fr_2fr] lg:grid-rows-[1fr] gap-4  pt-4 md:grid-cols-1 md:grid-rows-[2fr_1fr]  sm:grid-cols-1 sm:grid-rows-[2fr_1fr] 
                   md:gap-6 sm:gap-6 p-2 rounded-md bg-[#171e2e]"
                 >
-                   <Image placeholder="blur" blurDataURL="/icon.jpg"
+                   <Image placeholder="blur" blurDataURL="/iconblur.jpg"
                       src={urlFor(achievement.image).url()}
                       alt={achievement.title}
                       width={400} 
@@ -57,7 +57,7 @@ export async function Achievment({data}) {
                       </Badge>
                       <PortableText value={achievement.description} />
                       </div>
-                      <Image placeholder="blur" blurDataURL="/icon.jpg"
+                      <Image placeholder="blur" blurDataURL="/iconblur.jpg"
                       src={urlFor(achievement.image).url()}
                       alt={achievement.title}
                       width={400} 

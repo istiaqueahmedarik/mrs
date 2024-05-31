@@ -20,7 +20,7 @@ const Timeline = ({ data }) => {
                 {data?.map((item,id) => { 
                     return (
                         <div key={id} className="transition-all bg-[#121826] hover:bg-[#182034] p-4 flex-shrink-0 w-80 space-y-4 m-auto">
-                            <Image placeholder="blur" blurDataURL="/icon.jpg"
+                            <Image placeholder="blur" blurDataURL="/iconblur.jpg"
                                 alt="Timeline Item"
                                 className="rounded-lg object-cover"
                                 height={300}

@@ -26,7 +26,7 @@ export async function TeamTop({type}) {
         <Button className="bg-[#bd1e59]">{data.buttonText}</Button>
       </div>
       <div className="md:w-1/2  flex justify-center items-center">
-        <Image placeholder="blur" blurDataURL="/icon.jpg"
+        <Image placeholder="blur" blurDataURL="/iconblur.jpg"
           alt="Science Team"
           className="w-[70%] h-auto "
           height="1024"

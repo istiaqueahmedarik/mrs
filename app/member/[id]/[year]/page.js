@@ -27,7 +27,7 @@ async function page({ params }) {
   return (
       <div className="flex flex-col items-center justify-center  h-[130vh] bg-gray-900 text-gray-300  font-sans m-5">
           <div className="bg-gray-800  rounded-lg p-4 mb-5">
-              <Image placeholder="blur" blurDataURL="/icon.jpg"
+              <Image placeholder="blur" blurDataURL="/iconblur.jpg"
                   alt="Profile Picture"
                   className=" w-[50rem] rounded-lg bg-cover"
                   height={500}
@@ -47,7 +47,7 @@ async function page({ params }) {
                       components={{
                           types: {
                               image: props => (
-                                  <Image placeholder="blur" blurDataURL="/icon.jpg" src={urlFor(props.value).url()} alt="Big Picture" className="rounded-md mt-[2%] mb-[2%]" width={400} height={400} />
+                                  <Image placeholder="blur" blurDataURL="/iconblur.jpg" src={urlFor(props.value).url()} alt="Big Picture" className="rounded-md mt-[2%] mb-[2%]" width={400} height={400} />
                               ),
 
                           }
