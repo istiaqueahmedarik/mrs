@@ -1,6 +1,7 @@
 import { CardHeader, CardContent, Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import BlockContent from '@sanity/block-content-to-react';
+import { PortableText } from '@portabletext/react';
 
 import client from '@/lib/sanity'
 import Link from 'next/link';

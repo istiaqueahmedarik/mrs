@@ -4,6 +4,8 @@ import BlockContent from '@sanity/block-content-to-react';
 import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
+import { PortableText } from '@portabletext/react';
+
 export const revalidate = 3600
 async function loadSponsorData(id) {
     const query = `*[_type == "sponsorPage"][${id}]`;

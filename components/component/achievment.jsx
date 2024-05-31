@@ -2,6 +2,7 @@ import BlockContent from '@sanity/block-content-to-react'
 import { Badge } from '@/components/ui/badge'
 import client, { urlFor } from '@/lib/sanity'
 import Image from 'next/image'
+import { PortableText } from '@portabletext/react';
 
 export async function Achievment({data}) {
   
