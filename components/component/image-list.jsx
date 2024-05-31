@@ -23,7 +23,7 @@ export async function ImageList({data}) {
         <HoverCardTrigger asChild>
           <Card className="relative group overflow-hidden rounded-lg">
             <Link href={item.link}>
-              <Image placeholder="blur" blurDataURL="/iconblur.jpg"
+              <Image placeholder="blur" blurDataURL="/iconblur.jpg" quality={100}
                 alt={item.title}
                 className="object-cover w-full h-96"
                 height="400"

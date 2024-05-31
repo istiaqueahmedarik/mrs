@@ -4,7 +4,7 @@ import React from 'react'
 function SingleImageCard(props) {
   return (
     <div className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer hover:filter hover:brightness-125 transition-all duration-200">
-    <Image placeholder="blur" blurDataURL="/iconblur.jpg"
+    <Image placeholder="blur" blurDataURL="/iconblur.jpg" quality={100}
       alt="Gallery Image 2"
       className="object-center object-cover aspect-auto w-full h-72 group-hover:scale-110 transform transition ease-in-out duration-200"
       height="400"

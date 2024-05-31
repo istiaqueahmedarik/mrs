@@ -12,6 +12,7 @@ async function loadData(id) {
     return res;
 }
 
+const hasThisString=(str, query) => str.toLowerCase().includes(query.toLowerCase());
 
 function TeamDetails(props) {
     // const data = await loadData(props.year);
@@ -32,12 +33,12 @@ function TeamDetails(props) {
     const [st, setSt] = React.useState(0);
   return (
       <div className="">
-          <div className="flex flex-row w-full justify-around text-center m-auto">
+          <div className="flex flex-wrap md:flex-no-wrap w-full max-w-full justify-around text-center m-auto">
               {props.teams.map((item, idx) => {
             console.log("item", item)
               return (
                   
-                  <button key={idx} onClick={() => handleClick(idx)} className={`${st === idx ? "bg-[#ED4149] text-black  font-extrabold" : " bg-[#374151]"} pt-5 pb-5 pl-10 pr-10 rounded-lg text-xl  w-fit `} name="team"  >{item.teamName}</button>
+                  <button key={idx} onClick={() => handleClick(idx)} className={`${st === idx ? "bg-[#ED4149] text-black  font-extrabold" : " bg-[#374151]"} pt-5 pb-5 pl-10 pr-10 m-2 rounded-lg text-xl  w-fit `} name="team"  >{item.teamName}</button>
               )
            })} 
           </div>
@@ -55,22 +56,43 @@ function TeamDetails(props) {
                           </div>
                       </section>
                       <div
-                          className="grid gap-8 auto-cols-[22%] p-2 grid-flow-col justify-center"> 
+                          className="grid grid-cols-1 w-[50%]  m-auto  gap-4 ">
                           {
                               state.team.teamMembers.map((member) => {
                                   console.log(member.role)
                                   return (
-
-                                      <div key={member.leaderName} className="">
-                                          <TeamCard
+                                      <> 
+                                          
+                                          {hasThisString(member.role, "Lead") ? <TeamCard
                                               name={member.name}
                                               imageSrc={member.image}
                                               subtitle={member.subtitle}
                                               teamMemberSlug={member.teamMemberSlug.current}
                                               role={member.role}
                                               year={props.year}
-                                          />
-                                      </div>
+                                          /> : null}
+                                      </>
+                                  );
+                              })
+                          }
+                      </div>
+
+                      <div
+                          className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 "> 
+                          {
+                              state.team.teamMembers.map((member) => {
+                                  console.log(member.role)
+                                  return (
+                                      <>
+                                          {hasThisString(member.role, "Lead") ?null : <TeamCard
+                                              name={member.name}
+                                              imageSrc={member.image}
+                                              subtitle={member.subtitle}
+                                              teamMemberSlug={member.teamMemberSlug.current}
+                                              role={member.role}
+                                              year={props.year}
+                                          />}
+                                      </>
                                   );
                               })
                           }

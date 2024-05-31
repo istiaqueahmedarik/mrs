@@ -18,7 +18,7 @@ export default function TeamTop({title,description,image}) {
         hover:bg-blue-600 hover:text-white transition-all scroll-smooth m-2">Learn More</Link>
       </div>
       <div className="md:w-1/2">
-        <Image placeholder="blur" blurDataURL="/iconblur.jpg"
+        <Image placeholder="blur" blurDataURL="/iconblur.jpg" quality={100}
           alt="Science Team"
           className="w-full h-auto"
           height="400"

@@ -32,7 +32,7 @@ export default async function AboutUs({ dt }) {
 
             <div className="grid lg:grid-cols-[1fr_1fr] w-full h-full justify-around text-center content-center m-auto p-[53px] md:p-10 ">
                 <div className="sm:text-center grid content-center w-fit text-[1.5em] font-[bolder] m-auto">
-                    <Image placeholder="blur" blurDataURL="/iconblur.jpg"
+                    <Image placeholder="blur" blurDataURL="/iconblur.jpg" quality={100}
                         src={urlFor(data?.section1.image).url()}
                         alt=""
                         className="rounded-md object-cover w-auto h-full group-hover:scale-110 transform transition ease-in-out duration-200"
@@ -49,7 +49,7 @@ export default async function AboutUs({ dt }) {
             </div>
             
             <div className='m-auto grid place-content-center'>
-            <Image placeholder="blur" blurDataURL="/iconblur.jpg"Slider data={dt} />
+            <Image placeholder="blur" blurDataURL="/iconblur.jpg" quality={100}Slider data={dt} />
                 </div>
 
 
@@ -62,7 +62,7 @@ export default async function AboutUs({ dt }) {
                     <PortableText value={data.section2.text} />
                 </div>
                 <div className="sm:text-center grid content-center w-fit text-[1.5em] font-[bolder] m-auto">
-                    <Image placeholder="blur" blurDataURL="/iconblur.jpg"
+                    <Image placeholder="blur" blurDataURL="/iconblur.jpg" quality={100}
                         src={urlFor(data.section2.image).url()}
                         alt=""
                         className="rounded-md object-cover w-auto h-full group-hover:scale-110 transform transition ease-in-out duration-200"

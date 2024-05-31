@@ -19,7 +19,7 @@ export function Teams({ data,year }) {
                 </div>
               </section>
               <div
-                className="grid gap-8 auto-cols-[22%] p-2 grid-flow-col justify-center">
+                className="grid gap-8 grid-cols-2 w-[70%] m-auto ">
                 {
                   team.teamMembers.map((member) => {
                     console.log(member.role)
