@@ -30,7 +30,7 @@ export async function AddSponsor() {
                   <h2 className="text-2xl font-bold">{sponsor.type} Sponsor</h2>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                <BlockContent blocks={sponsor.benefits} />
+                <PortableText value={sponsor.benefits} />
                   <Button
                     className={`text-black border-gray-300 bg-[${sponsor.color}] `}
                     style={{backgroundColor: sponsor.color}}

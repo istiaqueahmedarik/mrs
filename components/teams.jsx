@@ -1,39 +1,40 @@
-import Image from "next/image";
+import TeamDetails from "./TeamDetails";
 import TeamCard from "./teamCard";
-import Link from "next/link";
 
 export function Teams({ data,year }) {
   console.log(data);
   return (
     (
       <>
-        {data?.teams.map((team) => { 
+        {data?.specialTeams.map((team,idx) => { 
           return (
-            <div key={1} className="p-5">
+            <div key={idx} className="p-5">
 
               <section className="container mx-auto py-15 px-4 md:px-6">
                 <div className="mb-12 text-center">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{team.teamName}</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl border-b-[5px] pb-2 border-[#ED4149] w-fit m-auto">{team.teamName}</h2>
                   <p className="mt-4 text-gray-400 md:text-xl">
                     {team.teamDescription}
                   </p>
                 </div>
               </section>
               <div
-                className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-2">
+                className="grid gap-8 auto-cols-[22%] p-2 grid-flow-col justify-center">
                 {
                   team.teamMembers.map((member) => {
                     console.log(member.role)
                     return (
-                      <TeamCard
-                        key={member.leaderName}
-                        name={member.name}
-                        imageSrc={member.image}
-                        subtitle={member.subtitle}
-                        teamMemberSlug={member.teamMemberSlug.current}
-                        role={member.role}
-                        year={year}
-                      />
+                      
+                      <div key = { member.leaderName } className="">
+                        <TeamCard
+                          name={member.name}
+                          imageSrc={member.image}
+                          subtitle={member.subtitle}
+                          teamMemberSlug={member.teamMemberSlug.current}
+                          role={member.role}
+                          year={year}
+                        />
+                      </div>
                     );
                    })
                }
@@ -41,6 +42,11 @@ export function Teams({ data,year }) {
             </div>
          )
         })}
+        <div className="mb-12 mt-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl  border-b-[5px] pb-2 border-[#ED4149] w-fit m-auto">Crew Members</h2>
+          
+        </div>
+        <TeamDetails teams={data.teams} year={year} />
       </>
     )
   );

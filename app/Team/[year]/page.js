@@ -9,11 +9,9 @@ async function loadData(id) {
 
 
 async function page({ params }) {
-  const data = await loadData(params.year)
-    console.log(data);
+ 
   return (
       <div>
-      <Teams data={data[0]} year={params.year} />
     </div>
   )
 }

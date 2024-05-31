@@ -1,3 +1,4 @@
+import TeamYearList from '@/components/TeamYearList'
 import { client } from '@/sanity/lib/client'
 import { UsersRoundIcon } from 'lucide-react'
 import { Inter } from 'next/font/google'
@@ -10,6 +11,7 @@ export const metadata = {
 import { Manrope } from 'next/font/google'
 import { Chivo } from 'next/font/google'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -46,12 +48,8 @@ export default async function RootLayout({ children }) {
                 </div>
             </section>
             <div className="p-2 flex flex-row justify-center w-full overflow-scroll text-5xl">
-                {years.map((year,id) => (
-                    <div key={year.teamYear} className="flex justify-between h-auto">
-                        <Link className="hover:text-red-500" href={`/Team/${year.teamYear}`}>{year.teamYear}</Link>
-                        {id !== years.length - 1 ? <span className="ml-2 mr-2">|</span>: null}
-                    </div>
-                ))}
+                <TeamYearList years={years} />
+                
 
 
             </div>

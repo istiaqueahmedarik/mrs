@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function Contact() {
   return (
-    <div className="dark bg-[#111827] min-h-screen text-white">
+    <div className="dark bg-[#141A2B] min-h-screen text-white">
       <div className="container mx-auto px-4 py-8 text-center">
         <h1 className="text-4xl font-bold">Contact Us</h1>
         <p className="text-lg text-gray-300 mt-2">We&apos;d love to hear from you!</p>

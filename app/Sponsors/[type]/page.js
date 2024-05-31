@@ -23,7 +23,7 @@ export default async function Page({ params }) {
                             <Image src={urlFor(i.logo).url()} width={300} height={300} alt="sponsor logo" className="rounded-md m-auto ml-[3%]" />
                             <div className="grid grid-rows-[1fr_2fr_1fr] text-left">
                                 <h1 className="text-3xl font-extrabold">{i.name}</h1>
-                                <BlockContent blocks={i.description} />
+                                <PortableText value={i.description} />
                                 <Link href={i.link} className="rounded-md text-pink-400">Learn More</Link>
                             </div>
                         </div>
@@ -31,7 +31,7 @@ export default async function Page({ params }) {
                         <div key={index} className="grid grid-rows-1 p-[2%] place-content-center grid-cols-[2fr_1fr] m-[4%] gap-3 bg-[#1c253a] rounded-md">
                             <div className="grid grid-rows-[1fr_2fr_1fr] text-left">
                                 <h1 className="text-3xl font-extrabold">{i.name}</h1>
-                                <BlockContent blocks={i.description} />
+                                <PortableText value={i.description} />
                                 <Link  href={i.link} className="rounded-md text-pink-400">Learn More</Link>
                             </div>
                             <Image src={urlFor(i.logo).url()} width={300} height={300} alt="sponsor logo" className="rounded-md m-auto ml-[3%]" />

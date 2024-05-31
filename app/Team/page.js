@@ -1,14 +1,23 @@
-import { Teams } from '@/components/teams'
+'use server'
 import { client } from '@/sanity/lib/client';
-import React from 'react'
-export const revalidate = 3600
-
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
+async function loadYear() {
+  const query = `*[_type == "teamPage"] | order(time desc)
+    {
+        teamYear
+    }
+    `;
+  const res = await client.fetch(query, { next: { revalidate: 3600 } });
+  return res;
+}
 async function page() {
+  const data = await loadYear();
+  revalidatePath('/Team');
+  redirect(`/Team/${data[0].teamYear}`);
+
  
-  return (
-    <div>
-    </div>
-  )
+  
 }
 
 export default page

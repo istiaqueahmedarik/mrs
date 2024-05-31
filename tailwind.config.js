@@ -16,7 +16,8 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    extend: {
+    extend: 
+    {
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

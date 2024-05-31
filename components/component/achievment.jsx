@@ -38,7 +38,7 @@ export async function Achievment({data}) {
                       <Badge className="hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-2xl" variant="secondary">
                         {new Date(achievement.time).toLocaleDateString()}
                       </Badge>
-                      <BlockContent blocks={achievement.description} />
+                      <PortableText value={achievement.description} />
                       </div>
                   
                 </div>
@@ -54,7 +54,7 @@ export async function Achievment({data}) {
                       <Badge className="hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-2xl" variant="secondary">
                         {new Date(achievement.time).toLocaleDateString()}
                       </Badge>
-                      <BlockContent blocks={achievement.description} />
+                      <PortableText value={achievement.description} />
                       </div>
                       <Image
                       src={urlFor(achievement.image).url()}

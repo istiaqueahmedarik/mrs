@@ -20,17 +20,18 @@ async function loadTime()
 
 export default async function Home() {
   const [aboutUs, timeLine] = await Promise.all([loadData(), loadTime()]);
+  console.log(aboutUs,"aboutUs")
   return (
     <main>
       <div className=''>
         
         <MainSection/>
         <AboutUs dt={aboutUs}/>
-        {/* <Team/> */}
-        {/* <Sponsor/> */}
         <Timeline data={timeLine}/>
         <DonateUs/>
         
+        {/* <Team/> */}
+        {/* <Sponsor/> */}
       </div>
     </main>
   )

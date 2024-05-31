@@ -6,6 +6,7 @@ import { HoverCardTrigger, HoverCardContent, HoverCard } from "@/components/ui/h
 import client, { urlFor } from "@/lib/sanity";
 import BlockContent from '@sanity/block-content-to-react';
 import Image from "next/image";
+import { PortableText } from "@portabletext/react";
 
 export async function ImageList({data}) {
 
@@ -41,7 +42,7 @@ export async function ImageList({data}) {
         </HoverCardTrigger>
         <HoverCardContent className="w-80 bg-black">
           <div className="space-y-1">
-            <BlockContent blocks={item.description} />
+            <PortableText value={item.description} />
           </div>
         </HoverCardContent>
       </HoverCard>

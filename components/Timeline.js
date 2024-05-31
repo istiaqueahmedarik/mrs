@@ -5,6 +5,7 @@ import { TeamLead } from './component/team-lead';
 import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
 import BlockContent from '@sanity/block-content-to-react'
+import { PortableText } from '@portabletext/react';
 
 const Timeline = ({ data }) => {
     console.log(data);
@@ -37,7 +38,7 @@ const Timeline = ({ data }) => {
                                 </div>
                                 <h3 className="text-lg font-semibold">{item.title}</h3>
                                 
-                                    <BlockContent blocks={item.description} />
+                                    <PortableText value={item.description} />
                             </div>
                         </div>
                     )

@@ -1,6 +1,9 @@
-import LoadingSkeleton from "@/components/Loading";
+import React from 'react'
 
-export default function Loading() {
-    
-    return <LoadingSkeleton />
-  }
+function loading() {
+  return (
+    <div>loading</div>
+  )
+}
+
+export default loading
