@@ -9,13 +9,13 @@ function TeamCard(props) {
               <Image placeholder="blur" blurDataURL="/iconblur.jpg" 
                   alt={`${props.name}`}
               className="parent h-full w-full  transition-transform duration-300  object-cover m-auto scale-100 rounded-lg hover:scale-120 hover:blur-xl"
-                  height="1024"
+                  height="800"
                   src={urlFor(props.imageSrc).url()}
                   style={{
                       aspectRatio: "80/80",
                       objectFit: "cover",
                   }}
-              width="1024" />
+              width="800" />
           <div className='child absolute inset-1 flex items-end p-4 opacity-0 hover:opacity-100 transition-all  hover:bg-[#07070743]'>
               <div className='flex flex-col'>
                   <Link href={`/member/${props.teamMemberSlug}/${props.year}`} className="mb-2 text-[100%] text-[#fcfcfc] font-extrabold">{`${props.name}`}</Link>
