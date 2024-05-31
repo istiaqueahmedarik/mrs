@@ -12,7 +12,7 @@ async function page() {
   const data = await loadData();
   return (
     <div className='top-[5rem]  relative '>
-        <Image placeholder="blur" blurDataURL="/icon.jpg"List data={data}/>
+        <ImageList data={data}/>
     </div>
   )
 }

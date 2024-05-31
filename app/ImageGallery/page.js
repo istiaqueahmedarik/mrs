@@ -19,7 +19,7 @@ export default async function page() {
         data.map((item, index) => (
           
           <div  key={index}>
-            <Image placeholder="blur" blurDataURL="/icon.jpg"Modals data={item} />
+            <ImageModals data={item} />
           </div>
         ))
       }
