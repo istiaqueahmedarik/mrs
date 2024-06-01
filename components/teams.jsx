@@ -13,9 +13,9 @@ export function Teams({ data,year }) {
               <section className="container mx-auto py-15 px-4 md:px-6">
                 <div className="mb-12 text-center">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl border-b-[5px] pb-2 border-[#ED4149] w-fit m-auto">{team.teamName}</h2>
-                  <p className="mt-4 text-gray-400 md:text-xl">
+                  {/* <p className="mt-4 text-gray-400 md:text-xl">
                     {team.teamDescription}
-                  </p>
+                  </p> */}
                 </div>
               </section>
               <div
