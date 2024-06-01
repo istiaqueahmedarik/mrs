@@ -20,8 +20,8 @@ function TeamCard(props) {
           </div>
           
           <div className='flex flex-col m-auto text-center'>
-              <Link href={`/member/${props.teamMemberSlug}/${props.year}`} className="mb-2 text-[100%] text-[#fcfcfc] font-extrabold">{`${props.name}`}</Link>
-              <p className="mb-2 text-xl text-[#fcfcfc] font-bold">{props.role}</p>
+              <Link href={`/member/${props.teamMemberSlug}/${props.year}`} className="mb-2 text-xl text-[#fcfcfc] font-extrabold">{`${props.name}`}</Link>
+              <p className="mb-2 text-[100%] text-[#fcfcfc] font-bold">{props.role}</p>
               <p className="text-sm text-[#fcfcfc]">
                   {props.subtitle}
               </p>
