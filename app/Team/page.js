@@ -7,7 +7,7 @@ async function loadYear() {
         teamYear
     }
     `;
-  const res = await client.fetch(query, { next: { revalidate: 3600 } });
+  const res = await client.fetch(query, { next: { revalidate: 10 } });
   return res;
 }
 async function page() {

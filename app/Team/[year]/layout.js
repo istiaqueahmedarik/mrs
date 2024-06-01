@@ -4,7 +4,7 @@ import { client } from '@/sanity/lib/client'
 import { UsersRoundIcon } from 'lucide-react'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
-export const revalidate = 3600
+export const revalidate = 10
 export const metadata = {
     title: 'Mongor Barta',
     description: 'Mongor Barta is a club for developing and learning about mars rover and space science',
@@ -29,7 +29,7 @@ async function loadData(id) {
         teams
     }
     `;
-    const res = await client.fetch(query, { next: { revalidate: 3600 } });
+    const res = await client.fetch(query, { next: { revalidate: 10 } });
     return res;
 }
 

@@ -1,7 +1,7 @@
 import { ContactRight } from "@/components/component/contact_right";
 import client from "@/lib/sanity";
 import Link from "next/link";
-export const revalidate = 3600
+export const revalidate = 10
 async function loadData()
 {
   const query = `*[_type == "contact"][0]`;

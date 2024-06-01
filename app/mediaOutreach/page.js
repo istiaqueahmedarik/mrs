@@ -1,11 +1,11 @@
 import { ImageList } from '@/components/component/image-list'
 import { client } from '@/sanity/lib/client';
 import React from 'react'
-export const revalidate = 3600
+export const revalidate = 10
 async function loadData()
 {
   const query = `*[_type == "imageItem"]`;
-  const res = await client.fetch(query,{ next: { revalidate: 3600 } });
+  const res = await client.fetch(query,{ next: { revalidate: 10 } });
   return res;
 }
 async function page() {

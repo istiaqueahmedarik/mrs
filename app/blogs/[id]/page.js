@@ -2,10 +2,10 @@ import client, { urlFor } from '@/lib/sanity';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import React from 'react'
-export const revalidate = 3600
+export const revalidate = 10
 async function fetchData(id) {
     const query = `*[_type == "events" && slug.current == "${id}"][0]`;
-    const res = await client.fetch(query,{ next: { revalidate: 3600 } });
+    const res = await client.fetch(query,{ next: { revalidate: 10 } });
     return res;
   }
 async function page({params}) {

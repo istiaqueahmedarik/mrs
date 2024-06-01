@@ -16,7 +16,7 @@ async function loadData(id, year) {
     }
   }
 }`;
-    const res = await client.fetch(query, { next: { revalidate: 3600 } });
+    const res = await client.fetch(query, { next: { revalidate: 10 } });
     return res;
 }
 

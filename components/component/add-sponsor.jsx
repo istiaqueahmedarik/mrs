@@ -5,10 +5,10 @@ import { PortableText } from '@portabletext/react';
 
 import client from '@/lib/sanity'
 import Link from 'next/link';
-export const revalidate = 3600
+export const revalidate = 10
 async function loadSponsorData(id) {
   const query = `*[_type == "sponsorPage"]`
-  const res = await client.fetch(query,{ next: { revalidate: 3600 } })
+  const res = await client.fetch(query,{ next: { revalidate: 10 } })
   return res
 }
 export async function AddSponsor() {

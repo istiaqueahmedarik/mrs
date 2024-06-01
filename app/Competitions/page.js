@@ -2,10 +2,10 @@ import CompCard from '@/components/CompCard'
 import { client } from '@/sanity/lib/client';
 import React from 'react'
 
-export const revalidate = 3600
+export const revalidate = 10
 async function fetchData() {
   const query = `*[_type == "compCard"]`;
-  const res = await client.fetch(query,{ next: { revalidate: 3600 } });
+  const res = await client.fetch(query,{ next: { revalidate: 10 } });
   return res;
 }
 async function page() {

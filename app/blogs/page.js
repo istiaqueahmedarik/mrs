@@ -2,10 +2,10 @@
 import { Announcement } from '@/components/component/announcement'
 import { client } from '@/sanity/lib/client';
 
-export const revalidate = 3600
+export const revalidate = 10
 async function fetchData() {
   const query = `*[_type == "events"]  | order(date desc)`;
-  const res = await client.fetch(query,{ next: { revalidate: 3600 } });
+  const res = await client.fetch(query,{ next: { revalidate: 10 } });
   return res;
 }
 export default async function page() {
