@@ -17,8 +17,7 @@ export default async function page() {
     <div className='top-[2rem]  relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-10'>
       {
         data.map((item, index) => (
-          
-          <div  key={index}>
+          <div key={index}>
             <ImageModals data={item} />
           </div>
         ))
