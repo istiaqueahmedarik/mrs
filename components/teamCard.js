@@ -5,28 +5,31 @@ import React from 'react'
 
 function TeamCard(props) {
   return (
-      <div className="rounded-lg relative bg-gray-900 p-2 shadow-lg flex flex-auto justify-center">
-              <Image placeholder="blur" blurDataURL="/iconblur.jpg" 
-                  alt={`${props.name}`}
-              className="parent h-full w-full  transition-transform duration-300  object-cover m-auto scale-100 rounded-lg hover:scale-120 hover:blur-xl"
-                  height="800"
-                  src={urlFor(props.imageSrc).url()}
-                  style={{
-                      aspectRatio: "80/80",
-                      objectFit: "cover",
-                  }}
-              width="800" />
-          <div className='child absolute inset-1 flex items-end p-4 opacity-0 hover:opacity-100 transition-all  hover:bg-[#07070743]'>
-              <div className='flex flex-col'>
-                  <Link href={`/member/${props.teamMemberSlug}/${props.year}`} className="mb-2 text-[100%] text-[#fcfcfc] font-extrabold">{`${props.name}`}</Link>
-                  <p className="mb-4 text-xl text-[#fcfcfc] font-bold">{props.role}</p>
-                  <p className="text-sm text-[#fcfcfc]">
-                      {props.subtitle}
-                  </p>
-              </div>
+      <div className='flex flex-col w-fit m-auto p-4 rounded-md group mb-4'>
+          <Image placeholder="blur" blurDataURL="/iconblur.jpg"
+              alt={`${props.name}`}
+              className="transition-transform duration-300 max-w-xs rounded-full object-cover m-auto scale-100  hover:scale-120"
+              height="500"
+              src={urlFor(props.imageSrc).url()}
+              style={{
+                  aspectRatio: "80/80",
+                  objectFit: "cover",
+              }}
+              width="500" />
+          
+          <div className='flex flex-col m-auto text-center'>
+              <Link href={`/member/${props.teamMemberSlug}/${props.year}`} className="mb-2 text-[100%] text-[#fcfcfc] font-extrabold">{`${props.name}`}</Link>
+              <p className="mb-4 text-xl text-[#fcfcfc] font-bold">{props.role}</p>
+              <p className="text-sm text-[#fcfcfc]">
+                  {props.subtitle}
+              </p>
           </div>
       </div>
   )
 }
+
+
+
+   
 
 export default TeamCard
