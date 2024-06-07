@@ -30,7 +30,7 @@ export function Teams({ data,year }) {
                           name={member.name}
                           imageSrc={member.image}
                           subtitle={member.subtitle}
-                          teamMemberSlug={member.teamMemberSlug.current}
+                          teamMemberSlug={member.teamMemberSlug?.current}
                           role={member.role}
                           year={year}
                         />

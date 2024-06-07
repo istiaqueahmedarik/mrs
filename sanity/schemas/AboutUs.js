@@ -1,4 +1,4 @@
-import { defineArrayMember } from "sanity";
+import { defineArrayMember, validation } from "sanity";
 
 export default {
     name: 'aboutUs',
