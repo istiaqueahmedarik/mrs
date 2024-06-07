@@ -9,17 +9,23 @@ const teamPage = {
             name: 'title',
             title: 'Title',
             type: 'string',
+            validation: (Rule) => Rule.required(),
+
         },
         {
             name: 'teamYear',
             title: 'Team Year',
             type: 'string',
+            validation: (Rule) => Rule.required(),
+
         },
 
         {
             name: 'specialTeams',
             title: 'Special Members (Mangement and Project Monitor)',
             type: 'array',
+            validation: (Rule) => Rule.required(),
+
             of: [
                 {
                     type: 'object',
@@ -28,11 +34,15 @@ const teamPage = {
                             name: 'teamName',
                             title: 'Team Name',
                             type: 'string',
+                            validation: (Rule) => Rule.required(),
+
                         },
                         {
                             name: 'teamDescription',
                             title: 'Team Description',
                             type: 'string',
+                            validation: (Rule) => Rule.required(),
+
                         },
                         {
                             name: 'teamNameSlug',
@@ -42,10 +52,14 @@ const teamPage = {
                                 source: 'teamName',
                                 maxLength: 96,
                             },
+                            validation: (Rule) => Rule.required(),
+
                         },
                         {
                             name: 'teamMembers',
                             title: 'Team Members',
+                            validation: (Rule) => Rule.required(),
+
                             type: 'array',
                             of: [
                                 {
@@ -55,16 +69,22 @@ const teamPage = {
                                             name: 'name',
                                             title: 'Name',
                                             type: 'string',
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'role',
                                             title: 'Role',
                                             type: 'string',
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'subtitle',
                                             title: 'Subtitle',
                                             type: 'string',
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'teamMemberSlug',
@@ -74,6 +94,8 @@ const teamPage = {
                                                 source: 'name',
                                                 maxLength: 96,
                                             },
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'image',
@@ -82,11 +104,15 @@ const teamPage = {
                                             options: {
                                                 hotspot: true,
                                             },
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'teamMemberDescription',
                                             title: 'Team Member Description',
                                             type: 'array',
+                                            validation: (Rule) => Rule.required(),
+
                                             of: [
                                                 defineArrayMember({
                                                     title: 'Block',
@@ -147,11 +173,15 @@ const teamPage = {
                             name: 'teamName',
                             title: 'Team Name',
                             type: 'string',
+                            validation: (Rule) => Rule.required(),
+
                         },
                         {
                             name: 'teamDescription',
                             title: 'Team Description',
                             type: 'string',
+                            validation: (Rule) => Rule.required(),
+
                         },
                         {
                             name: 'teamNameSlug',
@@ -161,6 +191,8 @@ const teamPage = {
                                 source: 'teamName',
                                 maxLength: 96,
                             },
+                            validation: (Rule) => Rule.required(),
+
                         },
                         {
                             name: 'teamMembers',
@@ -174,16 +206,22 @@ const teamPage = {
                                             name: 'name',
                                             title: 'Name',
                                             type: 'string',
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'role',
                                             title: 'Role',
                                             type: 'string',
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'subtitle',
                                             title: 'Subtitle',
                                             type: 'string',
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'teamMemberSlug',
@@ -193,6 +231,8 @@ const teamPage = {
                                                 source: 'name',
                                                 maxLength: 96,
                                             },
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'image',
@@ -201,11 +241,15 @@ const teamPage = {
                                             options: {
                                                 hotspot: true,
                                             },
+                                            validation: (Rule) => Rule.required(),
+
                                         },
                                         {
                                             name: 'teamMemberDescription',
                                             title: 'Team Member Description',
                                             type: 'array',
+                                            validation: (Rule) => Rule.required(),
+
                                             of: [
                                                 defineArrayMember({
                                                     title: 'Block',

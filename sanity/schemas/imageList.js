@@ -7,6 +7,8 @@ export default {
         name: 'title',
         title: 'Title',
         type: 'string',
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name: 'image',
@@ -15,6 +17,8 @@ export default {
         options: {
           hotspot: true,
         },
+        validation: (Rule) => Rule.required(),
+
       },
       
       {
@@ -22,11 +26,15 @@ export default {
         title: 'Description',
         type: 'array',
         of: [{ type: 'block' }],
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name: 'link',
         title: 'Link',
         type: 'url',
+        validation: (Rule) => Rule.required(),
+
       },
     ],
     preview: {

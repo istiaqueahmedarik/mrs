@@ -7,6 +7,8 @@ export default {
         name: 'title',
         title: 'Title',
         type: 'string',
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name: 'image',
@@ -15,17 +17,23 @@ export default {
         options: {
           hotspot: true,
         },
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name: 'time',
         title: 'Date and Time',
         type: 'datetime',
+        validation: (Rule) => Rule.required(),
       },
       {
         name: 'description',
         title: 'Description',
         type: 'array',
         of: [{ type: 'block' }],
+        validation: (Rule) => Rule.required(),
+
       },
+      
     ],
   };

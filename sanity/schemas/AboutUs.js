@@ -9,11 +9,13 @@ export default {
         name: 'title',
         title: 'Title',
         type: 'string',
+        validation: (Rule) => Rule.required(),
       },
       {
         name: 'SubTitle',
         title: 'SubTitle',
         type: 'string',
+        validation: (Rule) => Rule.required(),
       },
       {
         name: 'section1',
@@ -27,16 +29,20 @@ export default {
             options: {
               hotspot: true,
             },
+            validation: (Rule) => Rule.required(),
           },
           {
             name: 'title',
             title: 'Title',
             type: 'string',
+            validation: (Rule) => Rule.required(),
+
           },
           {
             name: 'text',
             title: 'Text',
             type: 'array',
+            validation: (Rule) => Rule.required(),
             of: [
               defineArrayMember({
                 title: 'Block',
@@ -99,6 +105,8 @@ export default {
             name: 'title',
             title: 'Title',
             type: 'string',
+            validation: (Rule) => Rule.required(),
+
           },
           {
             name: 'image',
@@ -107,11 +115,15 @@ export default {
             options: {
               hotspot: true,
             },
+            validation: (Rule) => Rule.required(),
+
           },
           {
             name: 'text',
             title: 'Text',
             type: 'array',
+            validation: (Rule) => Rule.required(),
+
             of: [{ type: 'block' }],
           },
         ],

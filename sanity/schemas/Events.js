@@ -9,6 +9,8 @@ export default {
         name: 'date',
         title: 'Date',
         type: 'datetime',
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name:'frontImage',
@@ -16,12 +18,16 @@ export default {
         type:'image',
         options:{
           hotspot:true
-        }
+        },
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name: 'eventTitle',
         title: 'Event Title',
         type: 'text',
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name:'slug',
@@ -30,12 +36,16 @@ export default {
         options:{
           source:'eventTitle',
           maxLength:100,
-        }
+        },
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name: 'eventPost',
         title: 'Event Post',
         type: 'array',
+        validation: (Rule) => Rule.required(),
+
         of: [
             defineArrayMember({
               title: 'Block',

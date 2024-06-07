@@ -8,12 +8,16 @@ export default {
         title: 'Title',
         type: 'string',
         description: 'Title for the image card',
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name: 'description',
         title: 'Description',
         type: 'text',
         description: 'Description for the image card',
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name: 'image',
@@ -22,6 +26,8 @@ export default {
         options: {
           hotspot: true,
         },
+        validation: (Rule) => Rule.required(),
+
         description: 'Image for the image card',
       },
     ],

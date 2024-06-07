@@ -6,12 +6,16 @@ export default {
       {
         name:'year',
         title:'Year',
-        type:'number'
+        type: 'number',
+        validation: (Rule) => Rule.required(),
+
       },
       {
         name:'leaders',
         title:'Leaders',
-        type:'array',
+        type: 'array',
+        validation: (Rule) => Rule.required(),
+
         of:[
           {
             name:'leader',

@@ -8,12 +8,16 @@ export default {
       title: 'Title',
       type: 'string',
       description: 'Section for the image card',
+      validation: (Rule) => Rule.required(),
+
     },
     {
       name: 'description',
       title: 'Description',
       type: 'string',
       description: 'description for the image card',
+      validation: (Rule) => Rule.required(),
+
     },
     {
       name: 'image',
@@ -23,11 +27,15 @@ export default {
         hotspot: true,
       },
       description: 'Image for the Home card',
+      validation: (Rule) => Rule.required(),
+
     },
     {
       name: 'children',
       title: 'Children',
       type: 'array',
+      validation: (Rule) => Rule.required(),
+
       of: [
         {
           type: 'object',
@@ -37,12 +45,16 @@ export default {
               title: 'Title',
               type: 'string',
               description: 'Title for the image card',
+              validation: (Rule) => Rule.required(),
+
             },
             {
               name: 'description',
               title: 'Description',
               type: 'text',
               description: 'Description for the image card',
+              validation: (Rule) => Rule.required(),
+
             },
             {
               name: 'image',
@@ -52,6 +64,8 @@ export default {
                 hotspot: true,
               },
               description: 'Image for the image card',
+              validation: (Rule) => Rule.required(),
+
             },
           ],
         },
