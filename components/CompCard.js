@@ -13,7 +13,6 @@ function CompCard(props) {
         width="400"
         height="225"
         class="object-cover w-full h-60 transition-transform duration-300 scale-100 hover:scale-105"
-        style="aspect-ratio: 400 / 225; object-fit: cover;"
       />
       <div class="absolute inset-0 flex items-end p-4 pointer-events-none">
         <div class="grid gap-1">
