@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 
 export const revalidate = 6000
 
-export const experimental_ppr = true;
+
 
 export default async function page() {
   return (

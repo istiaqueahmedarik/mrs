@@ -27,7 +27,7 @@ async function loadData(id, year) {
     }
     return res;
 }
-export const experimental_ppr = true;
+
 
 async function page({ params }) {
     // const id = params.id;

@@ -10,7 +10,7 @@ async function loadYear() {
   const res = await client.fetch(query, { next: { revalidate: 6000 } });
   return res;
 }
-export const experimental_ppr = true;
+
 
 async function page() {
   const data = await loadYear();

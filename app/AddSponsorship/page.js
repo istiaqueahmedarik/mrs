@@ -1,7 +1,7 @@
 import { AddSponsor } from '@/components/component/add-sponsor'
 import React, { Suspense } from 'react'
 export const revalidate = 6000
-export const experimental_ppr = true;
+
 
 function page() {
   return (

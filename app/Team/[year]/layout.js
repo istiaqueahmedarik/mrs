@@ -24,7 +24,7 @@ const chivo = Chivo({
     display: 'swap',
 })
 
-export const experimental_ppr = true;
+
 
 export default async function RootLayout({ children,params }) {
     

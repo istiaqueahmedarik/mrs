@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-export const experimental_ppr = true;
+
 
 async function  page() {
   return (

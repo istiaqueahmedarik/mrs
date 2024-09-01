@@ -12,7 +12,7 @@ async function loadSponsorData() {
     const res = await client.fetch(query,{ next: { revalidate: 6000 } });
     return res;
 }
-export const experimental_ppr = true;
+
 
 export default async function Page() {
     

@@ -7,7 +7,7 @@ async function loadData(id) {
     return res;
 }
 
-export const experimental_ppr = true;
+
 
 async function page({ params }) {
  
