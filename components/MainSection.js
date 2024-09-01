@@ -4,10 +4,10 @@ import Link from 'next/link';
 import client, { getClient, urlFor } from '@/lib/sanity';
 import { groq } from 'next-sanity';
 import TypeWriting from './TypeWriting';
-export const revalidate = 10
+export const revalidate = 6000
 async function fetchMainSec() {
   const query = `*[_type == "mainSection"][0]`;
-  const res = await client.fetch(query,{ next: { revalidate: 10 } });
+  const res = await client.fetch(query,{ next: { revalidate: 6000 } });
   return res;
 }
 const MainSection = async() => {

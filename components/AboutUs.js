@@ -4,16 +4,23 @@ import client, { urlFor } from '@/lib/sanity';
 import BlockContent from '@sanity/block-content-to-react';
 import { ImageSlider } from './ImageSlider';
 import { PortableText } from '@portabletext/react';
-export const revalidate = 10
+export const revalidate = 6000
 async function fetchAboutUs() {
     const query = `*[_type == "aboutUs"][0]`;
-    const res = await client.fetch(query,{ next: { revalidate: 10 } });
+    const res = await client.fetch(query,{ next: { revalidate: 6000 } });
     return res;
 }
 
-export default async function AboutUs({ dt }) {
+async function loadData() {
+    const query = `*[_type == "singleImageCard"]`;
+    const res = await client.fetch(query, { next: { revalidate: 6000 } });
+    return res;
+}
 
-    const data = await fetchAboutUs();
+export default async function AboutUs() {
+    // const dt = await loadData();
+    // const data = await fetchAboutUs();
+    const [data, dt] = await Promise.all([fetchAboutUs(), loadData()]);
 
     console.log(data, "aboutUs")
     return (

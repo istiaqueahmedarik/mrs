@@ -8,7 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Toaster } from '@/components/ui/toaster'
 import DonateUs from '@/components/DonateUs'
 const inter = Inter({ subsets: ['latin'] })
-export const revalidate = 10
+export const revalidate = 6000
 export const metadata = {
   title: 'Mongor Barta',
   description: 'Mongor Barta is a club for developing and learning about mars rover and space science',

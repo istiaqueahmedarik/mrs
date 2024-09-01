@@ -7,15 +7,15 @@ async function loadYear() {
         teamYear
     }
     `;
-  const res = await client.fetch(query, { next: { revalidate: 10 } });
+  const res = await client.fetch(query, { next: { revalidate: 6000 } });
   return res;
 }
+export const experimental_ppr = true;
+
 async function page() {
   const data = await loadYear();
   revalidatePath('/Team');
   redirect(`/Team/${data[0].teamYear}`);
-
- 
   
 }
 

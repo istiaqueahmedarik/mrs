@@ -4,30 +4,35 @@ import DonateUs from '@/components/DonateUs'
 import { client } from '@/sanity/lib/client';
 import { TeamLead } from '@/components/component/team-lead';
 import Timeline from '@/components/Timeline';
-export const revalidate = 10
+import { Suspense } from 'react';
+export const revalidate = 6000
 async function loadData()
 {
   const query = `*[_type == "singleImageCard"]`;
-  const res = await client.fetch(query,{ next: { revalidate: 10 } });
+  const res = await client.fetch(query,{ next: { revalidate: 6000 } });
   return res;
 }
 async function loadTime()
 {
   const query = `*[_type == "achievementsPage"]  | order(time desc)`
-  const res = await client.fetch(query,{ next: { revalidate: 10 } });
+  const res = await client.fetch(query,{ next: { revalidate: 6000 } });
   return res;
 }
-
+export const experimental_ppr = true;
 export default async function Home() {
-  const [aboutUs, timeLine] = await Promise.all([loadData(), loadTime()]);
-  console.log(aboutUs,"aboutUs")
+  const [timeLine] = await Promise.all([loadTime()]);
   return (
     <main>
       <div className=''>
-        
-        <MainSection/>
-        <AboutUs dt={aboutUs}/>
-        <Timeline data={timeLine}/>
+        <Suspense fallback={<div>Loading...</div>}>
+          <MainSection />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <AboutUs />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Timeline data={timeLine} />
+        </Suspense>
         <DonateUs/>
         
         {/* <Team/> */}

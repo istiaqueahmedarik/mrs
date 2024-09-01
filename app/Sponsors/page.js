@@ -5,24 +5,40 @@ import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
 import { AddSponsor } from "@/components/component/add-sponsor";
-export const revalidate = 10
+import { Suspense } from "react";
+export const revalidate = 6000
 async function loadSponsorData() {
     const query = `*[_type == "sponsorPage"]`;
-    const res = await client.fetch(query,{ next: { revalidate: 10 } });
+    const res = await client.fetch(query,{ next: { revalidate: 6000 } });
     return res;
 }
+export const experimental_ppr = true;
+
 export default async function Page() {
-    const Alldata = await loadSponsorData();
     
     return (
         <div>
             <AddSponsor/>
+            <Suspense fallback={<div>Loading...</div>}>
+                <GetAllData />
+            </Suspense>
+           
+        </div>
+    )
+}
 
-            {Alldata.map((data, index1) => {
-                return(
-                    <div key={index1} className=' bottom-[2rem]  relative  MainContainer'>
-            <Sponsor id={index1} />
-            {/* {data.sponsors.map((i, index) => {
+
+export async function GetAllData() {
+    const Alldata = await loadSponsorData();
+
+    return (
+    <>
+    {
+        Alldata.map((data, index1) => {
+            return (
+                <div key={index1} className=' bottom-[2rem]  relative  MainContainer'>
+                    <Sponsor id={index1} />
+                    {/* {data.sponsors.map((i, index) => {
                 return (
                     (index % 2 == 0) ? (
                         <div key={index} className="grid grid-rows-1 p-[1%] place-content-center grid-cols-[1fr_2fr] m-[4%] gap-3 bg-[#1c253a] rounded-md">
@@ -47,9 +63,10 @@ export default async function Page() {
             })} */}
 
 
-        </div>
-                )
-            })}
-        </div>
+                </div>
+            )
+        })
+            }
+        </>
     )
 }

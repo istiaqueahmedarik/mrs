@@ -4,7 +4,7 @@ import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 async function fetch(type) {
   const query = `*[_type == "${type}"][0]`;
-  const res = await client.fetch(query,{ next: { revalidate: 10 } });
+  const res = await client.fetch(query,{ next: { revalidate: 6000 } });
   return res;
 }
 export async function TeamTop({type}) {

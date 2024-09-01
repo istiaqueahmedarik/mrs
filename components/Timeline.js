@@ -6,8 +6,13 @@ import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
 import BlockContent from '@sanity/block-content-to-react'
 import { PortableText } from '@portabletext/react';
-
+async function loadTime() {
+    const query = `*[_type == "achievementsPage"]  | order(time desc)`
+    const res = await client.fetch(query, { next: { revalidate: 6000 } });
+    return res;
+}
 const Timeline = ({ data }) => {
+    
     console.log(data);
     return (
 

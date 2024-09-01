@@ -1,18 +1,18 @@
 
 import { Announcement } from '@/components/component/announcement'
 import { client } from '@/sanity/lib/client';
+import { Suspense } from 'react';
 
-export const revalidate = 10
-async function fetchData() {
-  const query = `*[_type == "events"]  | order(date desc)`;
-  const res = await client.fetch(query,{ next: { revalidate: 10 } });
-  return res;
-}
+export const revalidate = 6000
+
+export const experimental_ppr = true;
+
 export default async function page() {
-  const data = await fetchData();
   return (
     <div className='top-[2rem]  relative  AnnouncementContainer  mb-2'>
-        <Announcement data={data}/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Announcement />
+      </Suspense>
     </div>
 
   )

@@ -8,7 +8,7 @@ async function loadData(id) {
         teams
     }
     `;
-    const res = await client.fetch(query, { next: { revalidate: 10 } });
+    const res = await client.fetch(query, { next: { revalidate: 6000 } });
     return res;
 }
 

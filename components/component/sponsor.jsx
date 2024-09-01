@@ -1,11 +1,11 @@
 
 import client, { urlFor } from "@/lib/sanity";
 import Image from "next/image";
-export const revalidate = 10
+export const revalidate = 6000
 async function loadSponsorData(id)
 {
   const query = `*[_type == "sponsorPage"][${id}]`;
-  const res = await client.fetch(query,{ next: { revalidate: 10 } });
+  const res = await client.fetch(query,{ next: { revalidate: 6000 } });
   return res;
 }
 export async function Sponsor({id}) {

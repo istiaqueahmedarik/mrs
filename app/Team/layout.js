@@ -3,7 +3,7 @@ import { client } from '@/sanity/lib/client'
 import { UsersRoundIcon } from 'lucide-react'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
-export const revalidate = 10
+export const revalidate = 6000
 export const metadata = {
     title: 'Mongor Barta',
     description: 'Mongor Barta is a club for developing and learning about mars rover and space science',
@@ -28,7 +28,7 @@ async function loadYear() {
         teamYear
     }
     `;
-    const res = await client.fetch(query, { next: { revalidate: 10 } });
+    const res = await client.fetch(query, { next: { revalidate: 6000 } });
     return res;
 }
 export default async function RootLayout({ children }) {

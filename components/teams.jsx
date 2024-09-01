@@ -1,7 +1,19 @@
+import { client } from "@/sanity/lib/client";
 import TeamDetails from "./TeamDetails";
 import TeamCard from "./teamCard";
-
-export function Teams({ data,year }) {
+async function loadData(id) {
+  const query = `*[_type == "teamPage" && teamYear=="${id}"]
+    {
+        specialTeams,
+        teams
+    }
+    `;
+  const res = await client.fetch(query, { next: { revalidate: 6000 } });
+  return res;
+}
+export async function Teams({ year }) {
+  const dt = await loadData(year)
+  const data = dt[0];
   console.log(data);
   return (
     (

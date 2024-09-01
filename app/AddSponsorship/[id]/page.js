@@ -3,10 +3,10 @@ import { Contact } from '@/components/component/contact'
 import Contactleft from '@/components/component/contactleft'
 import client from '@/lib/sanity';
 import React from 'react'
-export const revalidate = 10
+export const revalidate = 6000
 async function loadSponsorData(id) {
     const query = `*[_type == "sponsorPage"][${id}]`;
-    const res = await client.fetch(query,{ next: { revalidate: 10 } });
+    const res = await client.fetch(query,{ next: { revalidate: 6000 } });
     return res;
 }
 export default async function page({params}) {

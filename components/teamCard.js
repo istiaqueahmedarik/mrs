@@ -1,13 +1,15 @@
+import { getBlur } from '@/app/utils'
 import { urlFor } from '@/lib/sanity'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 function TeamCard(props) {
+    const blur = getBlur();
   return (
       <div className='flex flex-col w-fit m-auto p-4 rounded-md group mb-4'>
           <div className='overflow-hidden rounded-full mb-2'>
-              <Image placeholder="blur" blurDataURL="/iconblur.jpg"
+              <Image placeholder="blur" blurDataURL={blur}
                   alt={`${props.name}`}
                   className="transition-transform duration-300 max-w-xs object-cover m-auto scale-100 group-hover:scale-110"
                   height="500"
@@ -16,6 +18,7 @@ function TeamCard(props) {
                       aspectRatio: "80/80",
                       objectFit: "cover",
                   }}
+                  
                   width="500" />
           </div>
           

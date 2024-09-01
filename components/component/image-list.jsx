@@ -7,9 +7,13 @@ import client, { urlFor } from "@/lib/sanity";
 import BlockContent from '@sanity/block-content-to-react';
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
-
-export async function ImageList({data}) {
-
+async function loadData() {
+  const query = `*[_type == "imageItem"]`;
+  const res = await client.fetch(query, { next: { revalidate: 6000 } });
+  return res;
+}
+export async function ImageList() {
+  const data = await loadData();
   console.log(data)
   return (
     (<div className="mb-[4%] ">

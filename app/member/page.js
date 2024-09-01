@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
+export const experimental_ppr = true;
 
-function page() {
+async function  page() {
   return (
     
       <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-gray-300 p-6 font-sans">
