@@ -9,10 +9,10 @@ const nextConfig = {
       },
     ],
   },
-  // experimental: {
-  //   ppr: 'incremental',
-  //   reactCompiler: true,
-  // },
+  experimental: {
+    ppr: 'incremental',
+    reactCompiler: true,
+  },
   
 }
 
