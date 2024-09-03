@@ -31,7 +31,7 @@ export async function Teams({ year }) {
                 </div>
               </section>
               <div
-                className="grid gap-8 grid-cols-2 w-[70%] m-auto ">
+                className="flex flex-wrap gap-8 w-[70%] m-auto justify-center">
                 {
                   team.teamMembers.map((member) => {
                     console.log(member.role)

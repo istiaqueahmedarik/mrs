@@ -1,272 +1,81 @@
-"use client"
-import {NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu"
-import client from "@/lib/sanity";
-import { Award, CalendarDays, Contact, GalleryHorizontalEnd, HeartHandshake, HelpingHand, Home, ImagePlusIcon, Users2, Rotate3D, User, Users2s } from "lucide-react";
-import Image from "next/image";
+'use client'
+
+import { useState } from "react"
 import Link from "next/link"
-import { useState } from "react";
-import useScroll from "../Hook/useScroll";
-import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation"
+import Image from "next/image"
+import { CalendarDays, GalleryHorizontalEnd, HelpingHand, Home, ImagePlus, Menu, Users2 } from "lucide-react"
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button"
+import useScroll from "../Hook/useScroll"
 
-export function NavBar({data}) {
- const path = usePathname();
-  const scrollPos = useScroll();
-  console.log(scrollPos);
+const navItems = [
+  { href: '/', label: 'Home', icon: Home },
+  { href: '/Team', label: 'Team', icon: Users2 },
+  { href: '/blogs', label: 'Blogs', icon: CalendarDays },
+  { href: '/Competitions', label: 'Competitions', icon: CalendarDays },
+  { href: '/ImageGallery', label: 'Gallery', icon: GalleryHorizontalEnd },
+  { href: '/mediaOutreach', label: 'Media Outreach', icon: ImagePlus },
+  { href: '/Sponsors', label: 'Sponsors', icon: HelpingHand },
+]
+
+export function NavBar() {
+  const path = usePathname()
+  const scrollPos = useScroll()
+  const [isOpen, setIsOpen] = useState(false)
+
+  const NavLink = ({ href, label, icon, isMobile = false }) => (
+    <NavigationMenuItem>
+      <Link
+        href={href}
+        className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white ${path===href ? "bg-gray-700 text-white" : ""
+          } focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
+      >
+        { label}
+      </Link>
+    </NavigationMenuItem>
+  )
+
   return (
-    ( <header className={`w-full ${scrollPos<=20?"bg-transparent":""} fixed top-0 z-20 flex items-center justify-between px-6 py-4 bg-[#111827] text-white `}>
-    <div className="flex items-center space-x-5">
-      <Image placeholder="blur" blurDataURL="/iconblur.jpg" quality={100} alt="" className="w-10 h-10 rounded-full" height={100} width={100} src="/icon.jpg"/>
-      <p className="text-lg font-bold lg:grid md:hidden sm:hidden hidden">Mongol Barta</p>
-    </div>
- 
-    <NavigationMenu className="hidden lg:block md:hidden sm:hidden">
+    <header className={`w-full ${scrollPos <= 20 ? "bg-transparent" : ""} fixed top-0 z-20 flex items-center justify-between px-6 py-4 bg-[#111827] text-white`}>
+      <div className="flex items-center space-x-5">
+        <Image
+          placeholder="blur"
+          blurDataURL="/iconblur.jpg"
+          quality={100}
+          alt="Mongol Barta Logo"
+          className="w-10 h-10 rounded-full"
+          height={100}
+          width={100}
+          src="/icon.jpg"
+        />
+        <p className="text-lg font-bold lg:block hidden">Mongol Barta</p>
+      </div>
+
+      <NavigationMenu className="hidden lg:block">
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md  px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white ${path === '/' ?"bg-gray-700 text-white":""} focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/">
-               <Home className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Home</div> 
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md  px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white ${path.startsWith('/Team') ? "bg-gray-700 text-white" : ""} focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/Team">
-              <Users2 className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Team</div>
-            </Link>
-          </NavigationMenuItem>
-          {/* <NavigationMenuItem>
-            <NavigationMenuTrigger>
-            <Users className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Team</div> 
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <div className="grid bg-gray-800 w-[200px] p-2 text-white">
-                 {data.map((team, index) =>{
-                  return(
-                    <Link key={index} asChild>
-                  <Link
-                    className={`group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-                    href={`/Team/${team.teamNameSlug.current}`}>
-                    <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">{team.teamName}</div>
-                  </Link>
-                </Link>
-                  )
-                })} 
-               
-              </div>
-            </NavigationMenuContent>
-          </NavigationMenuItem> */}
-          {/* <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/Rover">
-               <Rotate3D className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Rover</div> 
-            </Link>
-          </NavigationMenuItem> */}
-          {/* <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/Achievement">
-               <Award className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Achievements</div> 
-            </Link>
-          </NavigationMenuItem> */}
-          <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white ${path.startsWith('/blogs') ? "bg-gray-700 text-white" : ""} focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/blogs">
-              <CalendarDays className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Blogs</div> 
-            </Link>
-          </NavigationMenuItem>
-          
-          <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white ${path.startsWith('/Competitions') ? "bg-gray-700 text-white" : ""} focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/Competitions">
-              <CalendarDays className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Competitions</div> 
-            </Link>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 ${path.startsWith('/ImageGallery') ? "bg-gray-700 text-white" : ""} focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/ImageGallery">
-               <GalleryHorizontalEnd className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Gallery</div> 
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white ${path.startsWith('/mediaOutreach') ? "bg-gray-700 text-white" : ""} focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/mediaOutreach">
-               <Image placeholder="blur" blurDataURL="/iconblur.jpg" quality={100}PlusIcon className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Media Outreach</div> 
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white ${path.startsWith('/Sponsors') ? "bg-gray-700 text-white" : ""} focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/Sponsors">
-              <HelpingHand className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Sponsors</div> 
-            </Link>
-          </NavigationMenuItem>
-         
-
-          
-          
-          
-          
-          {/* <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/donate">
-               <HelpingHand className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Donate</div> 
-            </Link>
-          </NavigationMenuItem> */}
-          
-          {/* <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/Contact">
-               <Contact className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Contact</div> 
-            </Link>
-          </NavigationMenuItem> */}
+          {navItems.map((item) => (
+            <NavLink key={item.href} {...item} />
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
 
-    
-      <NavigationMenu className='block lg:hidden md:block sm:block transition-all duration-1000 '>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link
-            className={`group inline-flex h-9 w-max items-center justify-center rounded-md  px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-            href="/">
-             <Home className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Home</div> 
-          </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md  px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/Team">
-              <Users2 className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Team</div>
-            </Link>
-          </NavigationMenuItem>
-        {/* <NavigationMenuItem>
-          <NavigationMenuTrigger>
-          <Users className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Teams</div> 
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className="grid bg-gray-800 w-[200px] p-2 text-white">
-               {data.map((team, index) =>{
-                return(
-                  <Link key={index} asChild>
-                <Link
-                  className={`group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-                  href={`/Team/${team.teamNameSlug.current}`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">{team.teamName}</div>
-                </Link>
-              </Link>
-                )
-              })} 
-             
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem> */}
-        
-        <NavigationMenuItem>
-            <Link
-              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-              href="/Sponsors">
-              <HelpingHand className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Sponsors</div> 
-            </Link>
-          </NavigationMenuItem>
-
-        {/* <NavigationMenuItem>
-          <Link
-            className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-            href="/Contact">
-             <Contact className="grid md:hidden lg:hidden sm:grid" size={18} /> <div className="hidden sm:hidden md:grid lg:grid">Contact</div> 
-          </Link>
-        </NavigationMenuItem> */}
-        
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>
-           <div className="hidden sm:hidden md:grid lg:grid">Others</div> 
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className="grid bg-gray-800 w-[200px] p-2 text-white">
-            {/* <Link asChild>
-                <Link
-                  className={`group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-                  href={`/Rover`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Rover</div>
-                </Link>
-              </Link> */}
-              {/* <Link asChild>
-                <Link
-                  className={`group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-                  href={`/Achievement`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Achievements</div>
-                </Link>
-              </Link> */}
-              <Link asChild>
-                <Link
-                  className={`group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-                  href={`/blogs`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Blogs </div>
-                </Link>
-              </Link>
-
-
-              <Link asChild>
-                <Link
-                  className={`group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-                  href={`/Competitions`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Competitions </div>
-                </Link>
-              </Link>
-
-              <Link asChild>
-                <Link
-                  className={`group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-                  href={`/ImageGallery`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Image Gallery</div>
-                </Link>
-              </Link>
-
-              <Link asChild>
-                <Link
-                  className={`group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-                  href={`/mediaOutreach`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Media Outreach</div>
-                </Link>
-              </Link>
-
-              
-
-             
-
-              
-
-              {/* <Link asChild>
-                <Link
-                  className={`group grid h-auto w-full items-center justify-start gap-1 rounded-md p-4 text-sm font-medium transition-colors bg-gray-800 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50`}
-                  href={`/donate`}>
-                  <div className="text-sm font-medium leading-none bg-gray-800 group-hover:underline">Donate Us </div>
-                </Link>
-              </Link> */}
-
-             
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        
-       
-       
-      </NavigationMenuList>
-    </NavigationMenu>
-    
-  </header>)
-  );
+      <Sheet className="bg-transparent" open={isOpen} onOpenChange={setIsOpen}>
+        <SheetTrigger asChild>
+          <Button variant="ghost" size="icon" className="lg:hidden">
+            <Menu className="h-6 w-6 bg-[#141A2B]" />
+            <span className="sr-only">Toggle navigation menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left" className="bg-transparent text-white w-[300px] sm:w-[400px]">
+          <nav className="flex flex-col space-y-4">
+            {navItems.map((item) => (
+              <NavLink className="text-white" key={item.href} {...item} isMobile />
+            ))}
+          </nav>
+        </SheetContent>
+      </Sheet>
+    </header>
+  )
 }
-
-
-

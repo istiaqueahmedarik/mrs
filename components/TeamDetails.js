@@ -56,7 +56,7 @@ function TeamDetails(props) {
                           </div>
                       </section>
                       <div
-                          className="grid grid-cols-1 w-[50%]  m-auto  gap-4 ">
+                          className="flex flex-wrap justify-center w-[50%]  m-auto  gap-4 ">
                           {
                               state.team.teamMembers.map((member) => {
                                   console.log(member.role)
@@ -78,13 +78,14 @@ function TeamDetails(props) {
                       </div>
 
                       <div
-                          className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 "> 
+                          className="flex flex-wrap gap-4 "> 
                           {
-                              state.team.teamMembers.map((member) => {
+                              state.team.teamMembers.map((member,idx) => {
                                   console.log(member.role)
                                   return (
                                       <>
-                                          {hasThisString(member.role, "Lead") ?null : <TeamCard
+                                          {hasThisString(member.role, "Lead") ? null : <TeamCard
+                                                key={idx}
                                               name={member.name}
                                               imageSrc={member.image}
                                               subtitle={member.subtitle}
