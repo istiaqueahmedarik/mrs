@@ -5,6 +5,8 @@ import { client } from '@/sanity/lib/client';
 import { TeamLead } from '@/components/component/team-lead';
 import Timeline from '@/components/Timeline';
 import { Suspense } from 'react';
+import LoadingSkeleton from '@/components/Loading';
+import { MainSectionSkeleton } from '@/components/main-section-skeleton';
 export const revalidate = 6000
 async function loadData()
 {
@@ -24,7 +26,7 @@ export default async function Home() {
   return (
     <main>
       <div className=''>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<MainSectionSkeleton/>}>
           <MainSection />
         </Suspense>
         <Suspense fallback={<div>Loading...</div>}>

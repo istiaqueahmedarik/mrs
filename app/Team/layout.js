@@ -47,7 +47,7 @@ export default async function RootLayout({ children }) {
                     </p>
                 </div>
             </section>
-            <div className="p-2 flex flex-row justify-center w-full overflow-scroll text-5xl">
+            <div className="p-2 flex flex-row justify-between w-full overflow-scroll text-5xl">
                 <TeamYearList years={years} />
                 
 

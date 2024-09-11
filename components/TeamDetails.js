@@ -1,110 +1,125 @@
 'use client'
-import { client } from "@/sanity/lib/client";
-import React, { useState } from "react";
-import TeamCard from "./teamCard";
+
+import { client } from "@/sanity/lib/client"
+import React, { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import TeamCard from "./teamCard"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+
 async function loadData(id) {
     const query = `*[_type == "teamPage" && teamYear=="${id}"]
-    {
-        teams
-    }
-    `;
-    const res = await client.fetch(query, { next: { revalidate: 6000 } });
-    return res;
+  {
+    teams
+  }
+  `
+    const res = await client.fetch(query, { next: { revalidate: 6000 } })
+    return res
 }
 
-const hasThisString=(str, query) => str.toLowerCase().includes(query.toLowerCase());
+const hasThisString = (str, query) => str.toLowerCase().includes(query.toLowerCase())
 
-function TeamDetails(props) {
-    // const data = await loadData(props.year);
-    const [state,setState] =useState({
-        team: props.teams[0],
-        idx:0
-    })
-    
-    const handleClick = (idx) => {
-        setSt(idx);
-        setState({
-            team: props.teams[idx],
-            idx
-        });
-    }
-    console.log("teams", props.teams);
-    console.log(state, "state")
-    const [st, setSt] = React.useState(0);
-  return (
-      <div className="">
-          <div className="flex flex-wrap md:flex-no-wrap w-full max-w-full justify-around text-center m-auto">
-              {props.teams.map((item, idx) => {
-            console.log("item", item)
-              return (
-                  
-                  <button key={idx} onClick={() => handleClick(idx)} className={`${st === idx ? "bg-[#ED4149] text-black  font-extrabold" : " bg-[#374151]"} pt-5 pb-5 pl-10 pr-10 m-2 rounded-lg text-xl  w-fit `} name="team"  >{item.teamName}</button>
-              )
-           })} 
-          </div>
-           
-          {
-              state && (
-                  <div  className="p-5">
+export default function TeamDetails({ teams, year }) {
+    const [activeTeam, setActiveTeam] = useState(teams[0])
 
-                      <section className="container mx-auto py-15 px-4 md:px-6">
-                          <div className="mb-12 text-center">
-                              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl  border-b-[5px] pb-2 border-[#ED4149] w-fit m-auto">{state.team.teamName}</h2>
-                              {/* <p className="mt-4 text-gray-400 md:text-xl">
-                                  {state.team.teamDescription}
-                              </p> */}
-                          </div>
-                      </section>
-                      <div
-                          className="flex flex-wrap justify-center w-[50%]  m-auto  gap-4 ">
-                          {
-                              state.team.teamMembers.map((member) => {
-                                  console.log(member.role)
-                                  return (
-                                      <> 
-                                          
-                                          {hasThisString(member.role, "Lead") ? <TeamCard
-                                              name={member.name}
-                                              imageSrc={member.image}
-                                              subtitle={member.subtitle}
-                                              teamMemberSlug={member.teamMemberSlug.current}
-                                              role={member.role}
-                                              year={props.year}
-                                          /> : null}
-                                      </>
-                                  );
-                              })
-                          }
-                      </div>
+    return (
+        <div className="container mx-auto ">
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mb-12"
+            >
+                <Tabs defaultValue={teams[0].teamName} onValueChange={(value) => setActiveTeam(teams.find(team => team.teamName === value))}>
+                    <TabsList className="w-full flex flex-wrap justify-center gap-2 mb-6">
+                        {teams.map((team) => (
+                            <TabsTrigger
+                                key={team.teamName}
+                                value={team.teamName}
+                                className="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300"
+                            >
+                                {team.teamName}
+                            </TabsTrigger>
+                        ))}
+                    </TabsList>
+                    <AnimatePresence mode="wait">
+                        <TabsContent value={activeTeam.teamName}>
+                            <motion.div
+                                key={activeTeam.teamName}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.5 }}
+                                className="bg-gradient-to-br from-background to-secondary/10 shadow-lg rounded-lg p-8"
+                            >
+                                <h3 className="text-3xl font-bold text-center mb-8 pb-2 border-b-2 border-primary inline-block">
+                                    {activeTeam.teamName}
+                                </h3>
 
-                      <div
-                          className="flex flex-wrap gap-4 "> 
-                          {
-                              state.team.teamMembers.map((member,idx) => {
-                                  console.log(member.role)
-                                  return (
-                                      <>
-                                          {hasThisString(member.role, "Lead") ? null : <TeamCard
-                                                key={idx}
-                                              name={member.name}
-                                              imageSrc={member.image}
-                                              subtitle={member.subtitle}
-                                              teamMemberSlug={member.teamMemberSlug.current}
-                                              role={member.role}
-                                              year={props.year}
-                                          />}
-                                      </>
-                                  );
-                              })
-                          }
-                      </div>
-                  </div>
-              )
-          }
-          
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.2, staggerChildren: 0.1 }}
+                                    className="mb-12"
+                                >
+                                    <h4 className="text-2xl font-semibold mb-4 text-foreground">Team Leads</h4>
+                                    <div className="flex flex-wrap gap-8">
+                                        {activeTeam.teamMembers.map((member, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {hasThisString(member.role, "Lead") && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        animate={{ opacity: 1, scale: 1 }}
+                                                        transition={{ duration: 0.3 }}
+                                                    >
+                                                        <TeamCard
+                                                            name={member.name}
+                                                            imageSrc={member.image}
+                                                            subtitle={member.subtitle}
+                                                            teamMemberSlug={member.teamMemberSlug.current}
+                                                            role={member.role}
+                                                            year={year}
+                                                        />
+                                                    </motion.div>
+                                                )}
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                </motion.div>
 
-    </div>
-  )
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.4, staggerChildren: 0.05 }}
+                                >
+                                    <h4 className="text-2xl font-semibold mb-4 text-foreground">Team Members</h4>
+                                    <div className="flex flex-wrap gap-6">
+                                        {activeTeam.teamMembers.map((member, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {!hasThisString(member.role, "Lead") && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        animate={{ opacity: 1, scale: 1 }}
+                                                        transition={{ duration: 0.3 }}
+                                                    >
+                                                        <TeamCard
+                                                            name={member.name}
+                                                            imageSrc={member.image}
+                                                            subtitle={member.subtitle}
+                                                            teamMemberSlug={member.teamMemberSlug.current}
+                                                            role={member.role}
+                                                            year={year}
+                                                        />
+                                                    </motion.div>
+                                                )}
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            </motion.div>
+                        </TabsContent>
+                    </AnimatePresence>
+                </Tabs>
+            </motion.div>
+        </div>
+    )
 }
-
-export default TeamDetails

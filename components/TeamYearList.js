@@ -1,22 +1,38 @@
-"use client"
+'use client'
 
 import Link from "next/link"
-import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation"
 
-function TeamYearList(props) {
-    const years = props.years;
-    const path = usePathname();
-    console.log("path", path)
-  return (
-      <>
-          {years.map((year, id) => (
-              <div key={year.teamYear} className="flex justify-between h-auto">
-                  <Link className={`hover:text-red-500 ${path==='/Team/'+year.teamYear && 'text-red-500'}`} href={`/Team/${year.teamYear}`}>{year.teamYear}</Link>
-                  {id !== years.length - 1 ? <span className="ml-2 mr-2">|</span> : null}
-              </div>
-          ))}
-    </>
-  )
+function TeamYearList({ years }) {
+    const pathname = usePathname()
+
+    return (
+        <div className="w-full max-w-3xl mx-auto">
+            <nav className="flex flex-wrap gap-2" role="tablist" aria-label="Team Years">
+                {years.map((year) => {
+                    const isActive = pathname === `/Team/${year.teamYear}`
+                    return (
+                        <Link
+                            key={year.teamYear}
+                            href={`/Team/${year.teamYear}`}
+                            className={`
+                px-4 py-2 rounded-md text-4xl mx-auto font-medium transition-colors
+                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
+                ${isActive
+                                    ? 'bg-red-500 text-white'
+                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                }
+              `}
+                            role="tab"
+                            aria-selected={isActive}
+                        >
+                            {year.teamYear}
+                        </Link>
+                    )
+                })}
+            </nav>
+        </div>
+    )
 }
 
 export default TeamYearList

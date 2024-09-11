@@ -10,7 +10,7 @@ import DonateUs from '@/components/DonateUs'
 const inter = Inter({ subsets: ['latin'] })
 export const revalidate = 6000
 export const metadata = {
-  title: 'Mongor Barta',
+  title: 'Mongol Barta',
   description: 'Mongor Barta is a club for developing and learning about mars rover and space science',
 }
 import { Manrope } from 'next/font/google'
@@ -29,7 +29,7 @@ const chivo = Chivo({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${manrope.className} flex flex-col content-around`}>
+      <body className={`${manrope.className}  flex flex-col content-around`}>
         <Navbar className=""/>
         <SpeedInsights/>
         {children}
