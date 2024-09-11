@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { urlFor } from '@/lib/sanity'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { MainSectionSkeleton } from './main-section-skeleton'
 
 export default function MainSectionContent({ data }) {
     const [mounted, setMounted] = useState(false)
@@ -14,7 +15,7 @@ export default function MainSectionContent({ data }) {
         setMounted(true)
     }, [])
 
-    if (!mounted) return null
+    if (!mounted) return <MainSectionSkeleton />
 
     return (
         <div className='top-[2rem] md:top-[1rem] lg:top-[0rem] relative lg:grid lg:grid-rows-[1fr] text-left justify-around bg-[#141A2B] h-screen p-4'>

@@ -5,6 +5,7 @@ import client, { getClient, urlFor } from '@/lib/sanity';
 import { groq } from 'next-sanity';
 import TypeWriting from './TypeWriting';
 import MainSectionContent from './MainSectionContent';
+import { MainSectionSkeleton } from './main-section-skeleton';
 export const revalidate = 6000
 async function fetchMainSec() {
   const query = `*[_type == "mainSection"][0]`;
@@ -13,6 +14,7 @@ async function fetchMainSec() {
 }
 const MainSection = async() => {
   const data = await fetchMainSec();
+  if(!data) return <MainSectionSkeleton/>
   
     // if (!mainSection) return <div>Loading...</div>;
   return (
