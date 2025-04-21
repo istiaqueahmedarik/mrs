@@ -10,7 +10,7 @@ export default function PaymentOptions() {
    
     return (
         <Tabs defaultValue="gofundme" className="w-full">
-            <TabsList className="grid md:grid-cols-4 md:grid-rows-1 grid-rows-2 grid-cols-2 mb-6 break-words">
+            <TabsList className="grid md:grid-cols-4 md:grid-rows-1 grid-rows-2 grid-cols-2 mb-6 break-words sticky top-0 z-10 bg-background shadow-sm">
                 <TabsTrigger value="gofundme" className="flex items-center gap-2">
                     <Image src="gofund.svg" alt="bKash" width={24} height={24} className="h-5 w-5" />
 
