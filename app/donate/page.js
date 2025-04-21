@@ -8,7 +8,17 @@ export default function DonationPage() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="donate">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <div>
+                    <div className="order-1 lg:order-2">
+                        <div className="bg-white rounded-3xl shadow-xl overflow-hidden relative lg:sticky lg:top-24">
+                            <div className="sticky top-0 z-20 bg-white pt-5 px-5 pb-2">
+                                <h2 className="text-3xl font-bold text-gray-900 mb-2">Donation Options</h2>
+                            </div>
+                            <div className="p-5 pt-0">
+                                <PaymentOptions />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="order-2 lg:order-1">
                         <h2 className="text-3xl font-bold text-foreground mb-6">Why Donate?</h2>
                         <p className="text-lg text-gray-100 mb-8">
                             MIST Mongol Barota is a cross-departmental advanced robotics team from the Military Institute of Science and Technology (MIST), consisting of 35 dedicated students. Established in 2013, our mission is to advance robotics and space exploration. Over the years, our team has continuously pushed the boundaries of innovation to represent MIST and Bangladesh on the global stage.
@@ -60,15 +70,6 @@ export default function DonationPage() {
                             <div className="mt-4">
                                 <a href="https://thedailycampus.com/innovation-research/176147/%25252525E0%25252525A6%2525252587%25252525E0%25252525A6%2525252589%25252525E0%25252525A6%25252525A8%25252525E0%25252525A6%25252525BF%25252525E0%25252525A6%25252525AD%25252525E0%25252525A6%25252525BE%25252525E0%25252525A6%25252525B0%25252525E0%25252525A7%252525258D%25252525E0%25252525A6%25252525B8%25252525E0%25252525A6%25252525BF%25252525E0%25252525A6%252525259F%25252525E0%25252525A6%25252525BF-%25252525E0%25252525A6%25252525B0%25252525E0%25252525A7%252525258B%25252525E0%25252525A6%25252525AD%25252525E0%25252525A6%25252525BE%25252525E0%25252525A6%25252525B0-%25252525E0%25252525A6%252525259A%25252525E0%25252525A7%252525258D%25252525E0%25252525A6%25252525AF%25252525E0%25252525A6%25252525BE%25252525E0%25252525A6%25252525B2%25252525E0%25252525A7%2525252587%25252525E0%25252525A6%252525259E%25252525E0%25252525A7%252525258D%25252525E0%25252525A6%252525259C-%25252525E0%25252525A6%25252525AA%25252525E0%25252525A7%252525258D%25252525E0%25252525A6%25252525B0%25252525E0%25252525A6%25252525A4%25252525E0%25252525A6%25252525BF%25252525E0%25252525A6%25252525AF%25252525E0%25252525A7%252525258B%25252525E0%25252525A6%2525252597%25252525E0%25252525A6%25252525BF%25252525E0%25252525A6%25252525A4%25252525E0%25252525A6%25252525BE%25252525E0%25252525A7%252525259F-%25252525E0%25252525A6%252525259A%25252525E0%25252525A7%2525252582%25252525E0%25252525A7%252525259C%25252525E0%25252525A6%25252525BE%25252525E0%25252525A6%25252525A8%25252525E0%25252525A7%252525258D%25252525E0%25252525A6%25252525A4-%25252525E0%25252525A6%25252525AA%25252525E0%25252525A6%25252525B0%25252525E0%25252525A7%252525258D%25252525E0%25252525A6%25252525AC%25252525E0%25252525A7%2525252587-%25252525E0%25252525A6%252525258F%25252525E0%25252525A6%25252525AE%25252525E0%25252525A6%2525252586%25252525E0%25252525A6%2525252587%25252525E0%25252525A6%252525258F%25252525E0%25252525A6%25252525B8%25252525E0%25252525A6%252525259F%25252525E0%25252525A6%25252525BF-%25252525E0%25252525A6%25252525AE%25252525E0%25252525A6%2525252599%25252525E0%25252525A7%252525258D%25252525E0%25252525A6%2525252597%25252525E0%25252525A6%25252525B2-%25252525E0%25252525A6%25252525AC%25252525E0%25252525A6%25252525BE%25252525E0%25252525A6%25252525B0%25252525E0%25252525A7%252525258D%25252525E0%25252525A6%25252525A4%25252525E0%25252525A6%25252525BE-%25252525E0%25252525A6%25252525A6%25252525E0%25252525A6%25252525B2" target="_blank" rel="noopener noreferrer" className="text-rose-600 underline mr-4">Read the article on The Daily Campus</a>
                                 <a href="https://youtu.be/8F-JkxO275Y" target="_blank" rel="noopener noreferrer" className="text-rose-600 underline">Have a view on our System Acceptance Review</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className="bg-white rounded-3xl shadow-xl overflow-hidden lg:sticky lg:top-24">
-                            <div className="p-5">
-                                <h2 className="text-3xl font-bold text-gray-900 mb-6">Donation Options</h2>
-                                <PaymentOptions />
                             </div>
                         </div>
                     </div>

@@ -9,29 +9,30 @@ import Image from "next/image";
 export default function PaymentOptions() {
    
     return (
-        <Tabs defaultValue="gofundme" className="w-full">
-            <TabsList className="grid md:grid-cols-4 md:grid-rows-1 grid-rows-2 grid-cols-2 mb-6 break-words sticky top-0 z-10 bg-background shadow-sm">
-                <TabsTrigger value="gofundme" className="flex items-center gap-2">
-                    <Image src="gofund.svg" alt="bKash" width={24} height={24} className="h-5 w-5" />
+        <Tabs defaultValue="gofundme" className="w-full flex flex-col">
+            <div className="order-first mb-6">
+                <TabsList className="grid md:grid-cols-4 md:grid-rows-1 grid-rows-2 grid-cols-2 break-words sticky top-0 z-10 bg-background shadow-sm">
+                    <TabsTrigger value="gofundme" className="flex items-center gap-2">
+                        <Image src="gofund.svg" alt="bKash" width={24} height={24} className="h-5 w-5" />
+                        GoFundMe
+                    </TabsTrigger>
+                    <TabsTrigger value="bkash" className="flex items-center gap-2">
+                        <Image src="bkash.svg" alt="bKash" width={24} height={24} className="h-5 w-5" />
 
-                    GoFundMe
-                </TabsTrigger>
-                <TabsTrigger value="bkash" className="flex items-center gap-2">
-                    <Image src="bkash.svg" alt="bKash" width={24} height={24} className="h-5 w-5" />
+                        bKash
+                    </TabsTrigger>
+                    <TabsTrigger value="nagad" className="flex items-center gap-2">
+                        <Image src="nagad.svg" alt="bKash" width={24} height={24} className="h-5 w-5" />
 
-                    bKash
-                </TabsTrigger>
-                <TabsTrigger value="nagad" className="flex items-center gap-2">
-                    <Image src="nagad.svg" alt="bKash" width={24} height={24} className="h-5 w-5" />
+                        Nagad
+                    </TabsTrigger>
+                    <TabsTrigger value="ebl" className="flex items-center gap-2">
+                        <Image src="ebl.svg" alt="bKash" width={24} height={24} className="h-5 w-5" />
 
-                    Nagad
-                </TabsTrigger>
-                <TabsTrigger value="ebl" className="flex items-center gap-2">
-                    <Image src="ebl.svg" alt="bKash" width={24} height={24} className="h-5 w-5" />
-
-                    EBL Bank
-                </TabsTrigger>
-            </TabsList>
+                        EBL Bank
+                    </TabsTrigger>
+                </TabsList>
+            </div>
 
             <TabsContent value="gofundme">
                 <Card>
