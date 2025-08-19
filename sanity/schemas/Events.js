@@ -1,6 +1,6 @@
 import { defineArrayMember } from "sanity";
 
-export default {
+const events = {
     name: 'events',
     title: 'Blogs',
     type: 'document',
@@ -19,6 +19,21 @@ export default {
         options:{
           hotspot:true
         },
+        fields:[
+          {
+            name:'alt',
+            title:'Alt text',
+            type:'string',
+            description:'Important for SEO and accessibility.'
+          },
+          {
+            name:'caption',
+            title:'Caption',
+            type:'text',
+            rows:2,
+            description:'Shown below the image (optional).'
+          }
+        ],
         validation: (Rule) => Rule.required(),
 
       },
@@ -94,10 +109,16 @@ export default {
             defineArrayMember({
               type: 'image',
               options: {hotspot: true},
+              fields:[
+                {name:'alt', title:'Alt text', type:'string'},
+                {name:'caption', title:'Caption', type:'text', rows:2}
+              ]
             }),
           ],
       }
     ],
   }
+
+export default events
 
   
